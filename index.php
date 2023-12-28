@@ -12,6 +12,8 @@
     <input type="text" placeholder="Ürün Ara...">
     <button style="margin-right: auto;">Ara</button>
     <a href="form.php"><button> Giriş Yap</button></a>
+
+    
   </nav>
   <section>
     <div class="store">
