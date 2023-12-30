@@ -4,7 +4,9 @@ CREATE TABLE Kullanicilar (
     Adi VARCHAR(50) NOT NULL,
     Soyadi VARCHAR(50) NOT NULL,
     Eposta VARCHAR(100) NOT NULL UNIQUE,
-    Sifre VARCHAR(100) NOT NULL
+    Sifre VARCHAR(100) NOT NULL,
+    cep_telefonu VARCHAR(100) NOT NULL,
+    dogum_tarihi VARCHAR(100) NOT NULL
 );
 
 -- Mağazalar tablosu
