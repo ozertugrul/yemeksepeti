@@ -1,5 +1,6 @@
 <?php
-    include 'baglan.php';
+include 'baglan.php';
+
 // Bağlantı kontrolü
 if ($conn->connect_error) {
     die("Veritabanı bağlantısı başarısız: " . $conn->connect_error);
@@ -14,17 +15,25 @@ $sifre = $_POST['sifre'];
 // Şifreyi hashle
 $hashed_sifre = password_hash($sifre, PASSWORD_DEFAULT);
 
-// Veritabanına ekle
-$sql = "INSERT INTO Kullanicilar (Adi, Soyadi, Eposta, Sifre) VALUES ('$adi', '$soyadi', '$eposta', '$hashed_sifre')";
+// Veritabanında aynı e-posta adresinin kullanılıp kullanılmadığını kontrol et
+$check_existing_email = "SELECT * FROM Kullanicilar WHERE Eposta = '$eposta'";
+$result = $conn->query($check_existing_email);
 
-if ($conn->query($sql) === TRUE) {
-    echo "Kayıt başarıyla oluşturuldu.";
+if ($result->num_rows > 0) {
+    // E-posta adresi zaten kullanımda
+    echo "Bu e-posta adresi zaten kullanımda. Lütfen farklı bir e-posta adresi deneyin.";
 } else {
-    echo "Hata: " . $sql . "<br>" . $conn->error;
+    // Eğer e-posta adresi kullanımda değilse, veritabanına ekle
+    $sql = "INSERT INTO Kullanicilar (Adi, Soyadi, Eposta, Sifre) VALUES ('$adi', '$soyadi', '$eposta', '$hashed_sifre')";
+
+    if ($conn->query($sql) === TRUE) {
+        echo "Kayıt başarıyla oluşturuldu.";
+        header("Location: index.php");// anasayfaya dön
+    } else {
+        echo "Hata: " . $conn->error;
+    }
 }
 
 // Bağlantıyı kapat
 $conn->close();
-
-
 ?>
