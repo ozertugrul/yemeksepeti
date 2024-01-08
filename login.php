@@ -28,7 +28,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Girilen şifre ile veritabanındaki hash'i kontrol et
         if (password_verify($sifre, $hashed_sifre)) {
             session_start();
-            $_SESSION["kullanici_id"] = $row["KullaniciID"];
+            $_SESSION["KullaniciID"] = $row["KullaniciID"];
             $_SESSION["adi"] = $row["Adi"];
             $_SESSION["soyadi"] = $row["Soyadi"];
             header("Location: musteri.php");

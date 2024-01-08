@@ -11,6 +11,10 @@ $adi = $_POST['adi'];
 $soyadi = $_POST['soyadi'];
 $eposta = $_POST['eposta'];
 $sifre = $_POST['sifre'];
+$telNo = $_POST['telNo'];
+$dTarih = $_POST['dTarih'];
+
+
 
 // Şifreyi hashle
 $hashed_sifre = password_hash($sifre, PASSWORD_DEFAULT);
@@ -24,7 +28,7 @@ if ($result->num_rows > 0) {
     echo "Bu e-posta adresi zaten kullanımda. Lütfen farklı bir e-posta adresi deneyin.";
 } else {
     // Eğer e-posta adresi kullanımda değilse, veritabanına ekle
-    $sql = "INSERT INTO Kullanicilar (Adi, Soyadi, Eposta, Sifre) VALUES ('$adi', '$soyadi', '$eposta', '$hashed_sifre')";
+    $sql = "INSERT INTO Kullanicilar (Adi, Soyadi, Eposta, Sifre, TelNo, dogumTarihi) VALUES ('$adi', '$soyadi', '$eposta', '$hashed_sifre', '$telNo', '$dTarih' )";
 
     if ($conn->query($sql) === TRUE) {
         echo "Kayıt başarıyla oluşturuldu.";

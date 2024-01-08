@@ -5,8 +5,8 @@ CREATE TABLE Kullanicilar (
     Soyadi VARCHAR(50) NOT NULL,
     Eposta VARCHAR(100) NOT NULL UNIQUE,
     Sifre VARCHAR(100) NOT NULL,
-    cep_telefonu VARCHAR(100) NOT NULL,
-    dogum_tarihi VARCHAR(100) NOT NULL
+    TelNo VARCHAR(100) NOT NULL,
+    dogumTarihi VARCHAR(100) NOT NULL
 );
 
 CREATE TABLE Dukkanlar (
