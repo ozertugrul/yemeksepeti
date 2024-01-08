@@ -24,6 +24,22 @@ searchBoxOverlay.addEventListener("click", () => {
   }
 });
 
+flatpickr('#datepicker', {
+  dateFormat: 'd.m.Y',
+  allowInput: true,
+  clickOpens: false,
+  onClose: function(selectedDates, dateStr, instance) {
+      // Tarih seçim penceresi kapatıldığında, eğer bir tarih seçildiyse placeholder'ı temizle
+      if (selectedDates.length > 0) {
+          instance.input.placeholder = '';
+      }
+  },
+  onOpen: function(selectedDates, dateStr, instance) {
+      // Tarih seçim penceresi açıldığında, placeholder'ı temizle
+      instance.input.placeholder = '';
+  }
+});
+
 /* ===========> MOBILE MENU <===========  */
 /* Menu Show */
 const btnToggleMobileMenu = document.getElementById("btn-toggle-mobile-menu");
