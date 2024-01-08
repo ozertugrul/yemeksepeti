@@ -9,11 +9,12 @@ CREATE TABLE Kullanicilar (
     dogumTarihi VARCHAR(100) NOT NULL
 );
 
--- Mağazalar tablosu
-CREATE TABLE Magazalar (
-    MagazaID INT PRIMARY KEY AUTO_INCREMENT,
-    MagazaAdi VARCHAR(100) NOT NULL,
-    Adres VARCHAR(255) NOT NULL
+CREATE TABLE Dukkanlar (
+    dukkan_id INT PRIMARY KEY AUTO_INCREMENT,
+    dukkan_adi VARCHAR(100) NOT NULL,
+    dukkan_adresi VARCHAR(255) NOT NULL
+    dukkkan_sehiri VARCHAR(100) NOT NULL,
+    dukkan_mstutar INT,
 );
 
 -- Ürünler tablosu
