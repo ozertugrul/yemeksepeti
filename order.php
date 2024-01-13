@@ -24,14 +24,14 @@
 
 
   <script type="application/ld+json">{
-		"@context": "http://schema.org",
-		"@type": "Organization",
-		"name": "orders",
-		"logo": "images/yemeksepetiV2.0.png",
-		"sameAs": [
-				"https://facebook.com/name",
-				"https://twitter.com/name"
-		]
+    "@context": "http://schema.org",
+    "@type": "Organization",
+    "name": "orders",
+    "logo": "images/yemeksepetiV2.0.png",
+    "sameAs": [
+        "https://facebook.com/name",
+        "https://twitter.com/name"
+    ]
 }</script>
   <meta name="theme-color" content="#478ac9">
   <meta name="twitter:site" content="@">
@@ -112,6 +112,79 @@
         vermemişsiniz gibi görünüyor.</p>
     </div>
   </section>
+  <!DOCTYPE html>
+  <html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sepet</title>
+    <style>
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+      }
+
+      table,
+      th,
+      td {
+        border: 1px solid #ddd;
+      }
+
+      th,
+      td {
+        padding: 15px;
+        text-align: left;
+      }
+    </style>
+  </head>
+
+  <body>
+
+    <h2>Sepet</h2>
+
+    <?php
+    // Sepet bilgilerini kontrol et
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+      if (isset($_POST["product_name"]) && isset($_POST["product_price"])) {
+        // Yeni ürün eklenmişse, sepeti güncelle
+        $newProduct = [
+          'name' => $_POST["product_name"],
+          'price' => $_POST["product_price"]
+        ];
+
+        // Session kullanarak sepeti sakla
+        session_start();
+
+        if (!isset($_SESSION['cart'])) {
+          $_SESSION['cart'] = [];
+        }
+
+        array_push($_SESSION['cart'], $newProduct);
+      }
+    }
+
+    // Sepetin içeriğini göster
+    // session_start();
+
+    if (isset($_SESSION['cart']) && !empty($_SESSION['cart'])) {
+      echo "<table>";
+      echo "<tr><th>Ürün Adı</th><th>Fiyat</th></tr>";
+
+      foreach ($_SESSION['cart'] as $product) {
+        echo "<tr><td>{$product['name']}</td><td>{$product['price']}</td></tr>";
+      }
+
+      echo "</table>";
+    } else {
+      echo "<p>Sepet boş.</p>";
+    }
+    ?>
+
+  </body>
+
+  </html>
 
 
 

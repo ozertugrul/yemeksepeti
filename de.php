@@ -7,5 +7,7 @@ if (!isset($_SESSION["KullaniciID"])) {
     exit();
 }
 echo($_SESSION["KullaniciID"]);
+// password_verify("Sifre");
+echo($_SESSION["Sifre"]);
 
 ?>
