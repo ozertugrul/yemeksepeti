@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Anamakine: 127.0.0.1
--- Üretim Zamanı: 08 Oca 2024, 20:10:56
+-- Üretim Zamanı: 13 Oca 2024, 11:20:26
 -- Sunucu sürümü: 10.1.36-MariaDB
 -- PHP Sürümü: 5.6.38
 
@@ -37,7 +37,14 @@ CREATE TABLE `dukkanlar` (
   `dukkan_mstutar` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_turkish_ci;
 
+--
+-- Tablo döküm verisi `dukkanlar`
+--
 
+INSERT INTO `dukkanlar` (`dukkan_id`, `dukkan_resmi_adi`, `dukkan_adi`, `dukkan_adresi`, `dukkkan_sehiri`, `dukkan_mstutar`) VALUES
+(15, 'dukkanlogo/1705094027.png', 'Adana Dükkanı', 'Adananın en güzel yeri', 'Adana', 30),
+(16, 'dukkanlogo/1705096381.png', 'AMASYA Dükkanı', 'fgdjfjyhfıkjyfjyfh', 'Amasya', 50),
+(17, 'dukkanlogo/1705140647.jpg', 'Burger', 'Adananın en iyi yerinde', 'Adana', 50);
 
 -- --------------------------------------------------------
 
@@ -54,6 +61,13 @@ CREATE TABLE `kullanicilar` (
   `cep_telefonu` varchar(100) COLLATE utf8_turkish_ci NOT NULL,
   `dogum_tarihi` varchar(100) COLLATE utf8_turkish_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_turkish_ci;
+
+--
+-- Tablo döküm verisi `kullanicilar`
+--
+
+INSERT INTO `kullanicilar` (`KullaniciID`, `Adi`, `Soyadi`, `Eposta`, `Sifre`, `cep_telefonu`, `dogum_tarihi`) VALUES
+(1, 'Abdullah', 'DOĞAN', 'abdogan0306@gmail.com', 'A', '5522890631', '29.09.2003');
 
 -- --------------------------------------------------------
 
@@ -177,8 +191,39 @@ CREATE TABLE `urunler` (
   `UrunID` int(11) NOT NULL,
   `UrunAdi` varchar(100) COLLATE utf8_turkish_ci NOT NULL,
   `Fiyat` decimal(10,2) NOT NULL,
-  `DukkanID` int(11) DEFAULT NULL
+  `DukkanID` int(11) DEFAULT NULL,
+  `UrunResmi` varchar(100) COLLATE utf8_turkish_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_turkish_ci;
+
+--
+-- Tablo döküm verisi `urunler`
+--
+
+INSERT INTO `urunler` (`UrunID`, `UrunAdi`, `Fiyat`, `DukkanID`, `UrunResmi`) VALUES
+(15, 'Mandalina', '0.00', 15, 'urunresmi/1705096696.png'),
+(16, 'Abdullah', '0.00', 15, 'urunresmi/1705139845.png'),
+(17, 'wdaw', '32.00', 15, 'urunresmi/1705140733.jpg'),
+(18, 'aaa', '65.00', 15, 'urunresmi/1705140746.png');
+
+-- --------------------------------------------------------
+
+--
+-- Tablo için tablo yapısı `yetkili`
+--
+
+CREATE TABLE `yetkili` (
+  `id` int(11) NOT NULL,
+  `username` varchar(100) COLLATE utf8_turkish_ci NOT NULL,
+  `password` varchar(100) COLLATE utf8_turkish_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_turkish_ci;
+
+--
+-- Tablo döküm verisi `yetkili`
+--
+
+INSERT INTO `yetkili` (`id`, `username`, `password`) VALUES
+(1, 'admin', '123456'),
+(2, 'Abdullah', '12345');
 
 --
 -- Dökümü yapılmış tablolar için indeksler
@@ -188,7 +233,8 @@ CREATE TABLE `urunler` (
 -- Tablo için indeksler `dukkanlar`
 --
 ALTER TABLE `dukkanlar`
-  ADD PRIMARY KEY (`dukkan_id`);
+  ADD PRIMARY KEY (`dukkan_id`),
+  ADD UNIQUE KEY `dukkan_adresi` (`dukkan_adresi`);
 
 --
 -- Tablo için indeksler `kullanicilar`
@@ -219,6 +265,12 @@ ALTER TABLE `urunler`
   ADD KEY `DukkanID` (`DukkanID`);
 
 --
+-- Tablo için indeksler `yetkili`
+--
+ALTER TABLE `yetkili`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Dökümü yapılmış tablolar için AUTO_INCREMENT değeri
 --
 
@@ -226,13 +278,13 @@ ALTER TABLE `urunler`
 -- Tablo için AUTO_INCREMENT değeri `dukkanlar`
 --
 ALTER TABLE `dukkanlar`
-  MODIFY `dukkan_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `dukkan_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- Tablo için AUTO_INCREMENT değeri `kullanicilar`
 --
 ALTER TABLE `kullanicilar`
-  MODIFY `KullaniciID` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `KullaniciID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- Tablo için AUTO_INCREMENT değeri `siparisler`
@@ -244,7 +296,13 @@ ALTER TABLE `siparisler`
 -- Tablo için AUTO_INCREMENT değeri `urunler`
 --
 ALTER TABLE `urunler`
-  MODIFY `UrunID` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `UrunID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+
+--
+-- Tablo için AUTO_INCREMENT değeri `yetkili`
+--
+ALTER TABLE `yetkili`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- Dökümü yapılmış tablolar için kısıtlamalar
