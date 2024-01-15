@@ -56,7 +56,7 @@ a {
 }
 
 a:hover {
-    color: #ff6700
+    color: #ff0053
 }
 
 .btn {
@@ -65,26 +65,26 @@ a:hover {
 
 .btn-orange {
     transition: all 0.3s;
-    background: #ff6700;
+    background: #ff0053;
     color: #fcfcfc
 }
 
 .btn-orange:hover {
-    background: #ff6700;
-    box-shadow: 0 0px 11px #ff6700ab !important;
+    background: #ff0053;
+    box-shadow: 0 0px 11px #ff0053ab !important;
     color: #fcfcfc
 }
 
 .btn-orange.outline {
     background: transparent;
-    color: #ff6700;
-    border: 1px solid #ff6700
+    color: #ff0053;
+    border: 1px solid #ff0053
 }
 
 .btn-orange.outline:hover {
-    background: #ff6700;
+    background: #ff0053;
     color: #fcfcfc;
-    box-shadow: 0 0px 11px #ff6700ab !important
+    box-shadow: 0 0px 11px #ff0053ab !important
 }
 
 .btn-favorite {
@@ -98,7 +98,7 @@ a:hover {
 }
 
 .btn-favorite:hover {
-    background-color: #ff2727;
+    background-color: #ff0053;
     color: #fcfcfc;
     box-shadow: 0 0px 11px #ff2727ab !important
 }
@@ -106,11 +106,11 @@ a:hover {
 .btn-white {
     transition: all 0.3s;
     background: #fcfcfc;
-    color: #ff6700
+    color: #ff0053
 }
 
 .btn-white:hover {
-    background: #ff6700;
+    background: #ff0053;
     color: #fcfcfc;
     box-shadow: 0 0px 11px #ff2727ab !important
 }
@@ -215,7 +215,7 @@ a:hover {
 
 .main-content .form-control:hover,
 .main-content .form-control:focus {
-    border-color: #ff6700
+    border-color: #ff0053
 }
 
 .subtitle {
@@ -240,13 +240,13 @@ a:hover {
 }
 
 .floating-form .form-control:hover {
-    border-color: #ff6700
+    border-color: #ff0053
 }
 
 .floating-form .form-control:focus,
 .floating-form .form-control:active,
 .floating-form .form-control:valid {
-    border-color: #ff6700
+    border-color: #ff0053
 }
 
 .floating-form .form-control:focus+label,
@@ -256,7 +256,7 @@ a:hover {
     top: -2px !important;
     z-index: 100;
     font-size: 12px;
-    color: #ff6700
+    color: #ff0053
 }
 
 .floating-form label {
@@ -286,8 +286,8 @@ a:hover {
 }
 
 .badge-orange {
-    background: #ff67001c;
-    color: #ff6700
+    background: #ff00531c;
+    color: #ff0053
 }
 
 .badge-red {
@@ -361,14 +361,14 @@ a:hover {
     align-items: center;
     flex-direction: row;
     font-size: 13px;
-    border-color: #ff6700;
-    color: #ff6700 !important
+    border-color: #ff0053;
+    color: #ff0053 !important
 }
 
 .pagination-box .cs-pagination .btn:hover {
-    background: #ff6700;
+    background: #ff0053;
     color: #fcfcfc !important;
-    box-shadow: 0 0px 6px #ff6700ab !important
+    box-shadow: 0 0px 6px #ff0053ab !important
 }
 
 .pagination-box .cs-pagination p span {
@@ -393,16 +393,16 @@ a:hover {
 .pagination-box .cs-pagination-input:focus,
 .pagination-box .cs-pagination-input:active,
 .pagination-box .cs-pagination-input:hover {
-    border-color: #ff6700;
-    color: #ff6700
+    border-color: #ff0053;
+    color: #ff0053
 }
 
 .pagination-box .dropdown-item.active {
-    background: #ff6700 !important
+    background: #ff0053 !important
 }
 
 .pagination-box .dropdown-item:hover {
-    background: #ff67001c
+    background: #ff00531c
 }
 
 .banners .banner-box {
@@ -454,7 +454,7 @@ a:hover {
 }
 
 .banners .banner-box.img-1::before {
-    background: linear-gradient(109.6deg, #ff6700 1.42%, rgba(255, 103, 0, 0.26) 62.22%)
+    background: linear-gradient(109.6deg, #ff0053 1.42%, rgba(255, 103, 0, 0.26) 62.22%)
 }
 
 .banners .banner-box.img-2::before {
@@ -524,15 +524,15 @@ btn-blue-revert:hover {
     justify-content: center;
     align-items: center;
     flex-direction: row;
-    background: #ff67001c;
-    color: #ff6700;
+    background: #ff00531c;
+    color: #ff0053;
     transition: all 0.3s
 }
 
 .btn-orange-revert:hover {
-    background: #ff6700;
+    background: #ff0053;
     color: #fff;
-    box-shadow: 0 0px 11px #ff6700 !important
+    box-shadow: 0 0px 11px #ff0053 !important
 }
 
 .btn-orange-revert:hover .old-price {
@@ -656,13 +656,13 @@ nav.nav .navbar-left-menu {
         transform: translateX(-50%);
         height: 2px;
         width: 0;
-        background: #ff6700;
+        background: #ff0053;
         transition: all 0.3s
     }
 
     nav.nav .navbar-left-menu .navbar-link:hover,
     nav.nav .navbar-left-menu .navbar-link.active {
-        color: #ff6700
+        color: #ff0053
     }
 
     nav.nav .navbar-left-menu .navbar-link:hover::before,
@@ -710,7 +710,7 @@ nav.nav .navbar-right .btn-nav-link {
 }
 
 nav.nav .navbar-right .btn-nav-link:hover {
-    color: #ff6700
+    color: #ff0053
 }
 
 nav.nav .navbar-right .btn-nav-link .counter {
@@ -719,7 +719,7 @@ nav.nav .navbar-right .btn-nav-link .counter {
     position: absolute;
     top: 2px;
     left: 94%;
-    background: #ff6700;
+    background: #ff0053;
     color: #fcfcfc;
     font-size: 10px;
     display: flex;
@@ -945,11 +945,11 @@ nav.nav .navbar-right .search-box input {
 }
 
 .navbar .dropdown-content .sub-menu li:hover {
-    background: #ff67001c
+    background: #ff00531c
 }
 
 .navbar .dropdown-content .sub-menu li:hover a {
-    color: #ff6700 !important
+    color: #ff0053 !important
 }
 
 .navbar .dropdown-content .sub-menu li a {
@@ -1300,7 +1300,7 @@ nav.nav .navbar-right .search-box input {
 
 .product-card-body-size a:hover,
 .product-card-body-size a.active {
-    color: #ff6700
+    color: #ff0053
 }
 
 .product-card-body-color .color-select {
@@ -1519,7 +1519,7 @@ nav.nav .navbar-right .search-box input {
 
 .home-banner-right .size-select .size-list a:hover,
 .home-banner-right .size-select .size-list a.checked {
-    color: #ff6700
+    color: #ff0053
 }
 
 .home-banner-right .size-select .btn-white {
@@ -1716,11 +1716,11 @@ nav.nav .navbar-right .search-box input {
 }
 
 .products-page .main-content .dropdown-item.active {
-    background: #ff6700 !important
+    background: #ff0053 !important
 }
 
 .products-page .main-content .dropdown-item:hover {
-    background: #ff67001c
+    background: #ff00531c
 }
 
 .products-page .sidebar .accordion-item {
@@ -1739,12 +1739,12 @@ nav.nav .navbar-right .search-box input {
 }
 
 .products-page .sidebar .accordion-button:hover {
-    color: #ff6700
+    color: #ff0053
 }
 
 .products-page .sidebar .accordion-button:not(.collapsed) {
-    background: #ff67001c;
-    color: #ff6700;
+    background: #ff00531c;
+    color: #ff0053;
     border-radius: 6px;
     border-color: transparent
 }
@@ -1778,8 +1778,8 @@ nav.nav .navbar-right .search-box input {
 }
 
 .products-page .sidebar .accordion-body .form-check-input:checked {
-    background-color: #ff6700;
-    border-color: #ff6700
+    background-color: #ff0053;
+    border-color: #ff0053
 }
 
 .products-page .sidebar .accordion-body.size-boxes .form-check-label {
@@ -1790,7 +1790,7 @@ nav.nav .navbar-right .search-box input {
 
 .products-page .sidebar .accordion-body.size-boxes .form-check-label:hover,
 .products-page .sidebar .accordion-body.size-boxes .form-check-label .form-check-input:checked+span {
-    color: #ff6700
+    color: #ff0053
 }
 
 .products-page .sidebar .banner-image {
@@ -1922,7 +1922,7 @@ nav.nav .navbar-right .search-box input {
 
 .products-detail-page .product-details-header .star-box .stars>* {
     font-size: 18.66px;
-    color: #ff6700
+    color: #ff0053
 }
 
 .products-detail-page .product-details-title p {
@@ -1953,7 +1953,7 @@ nav.nav .navbar-right .search-box input {
 }
 
 .products-detail-page .product-details-price .new-price {
-    color: #ff6700;
+    color: #ff0053;
     font-size: 24.88px;
     line-height: 37.32px;
     margin-right: 15px
@@ -1991,12 +1991,12 @@ nav.nav .navbar-right .search-box input {
 }
 
 .products-detail-page .product-details-size>div a:not(.disabled):hover {
-    color: #ff6700;
+    color: #ff0053;
     cursor: pointer
 }
 
 .products-detail-page .product-details-size>div a.active {
-    color: #ff6700;
+    color: #ff0053;
     font-weight: 500
 }
 
@@ -2127,7 +2127,7 @@ nav.nav .navbar-right .search-box input {
 }
 
 .products-detail-page .tab-content .comment-box .stars {
-    color: #ff6700
+    color: #ff0053
 }
 
 .products-detail-page .tab-content .comment-box h6 {
@@ -2245,7 +2245,7 @@ nav.nav .navbar-right .search-box input {
 }
 
 .cargo-page .main-content .cargo-steps-box.complated .icon-box {
-    background: #ff6700;
+    background: #ff0053;
     color: #fcfcfc
 }
 
@@ -2283,7 +2283,7 @@ nav.nav .navbar-right .search-box input {
 
 @media (min-width: 768px) {
     .cargo-page .main-content .cargo-steps .cs-progress-bar {
-        background: #ff6700;
+        background: #ff0053;
         height: 5px;
         position: absolute;
         left: 0;
@@ -2433,7 +2433,7 @@ nav.nav .navbar-right .search-box input {
 }
 
 .blog-detail-page .share-social a:hover {
-    color: #ff6700 !important
+    color: #ff0053 !important
 }
 
 .blog-detail-page hr {
@@ -2539,10 +2539,10 @@ nav.nav .navbar-right .search-box input {
     width: 64px;
     min-width: 64px;
     height: 64px;
-    background: #ff67001c;
+    background: #ff00531c;
     font-size: 33.16px;
     border-radius: 100%;
-    color: #ff6700;
+    color: #ff0053;
     margin-right: 10px;
     display: flex;
     justify-content: center;

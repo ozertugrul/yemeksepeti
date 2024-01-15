@@ -25692,7 +25692,7 @@ h6 {
   color: #ffffff;
 }
 .u-body {
-  color: #111111;
+  color: #fff;
   background-color: #ffffff;
   --effect-scale: 1.1;
 }
@@ -28627,7 +28627,7 @@ section.u-palette-1-base:before,
 .u-button-style.u-palette-1-base,
 .u-button-style.u-palette-1-base[class*="u-border-"] {
   color: #ffffff !important;
-  background-color: #478ac9 !important;
+  background-color: #ff0053 !important;
 }
 .u-button-style.u-palette-1-base:hover,
 .u-button-style.u-palette-1-base[class*="u-border-"]:hover,

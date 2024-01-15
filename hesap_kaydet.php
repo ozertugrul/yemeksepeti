@@ -1,9 +1,18 @@
 <?php
-session_start();
 
 include("baglan.php");
 
-
+session_start();
+if (!isset($_SESSION["KullaniciID"])) {
+  echo "Lütfen oturum açınız. Anasayfaya Yönlendiriliyorsunuz!";
+  echo '<script>
+            setTimeout(function() {
+                window.location.href = "index.php";
+            }, 2500); // 2 seconds
+        </script>';
+  exit();
+  
+}
 
 // echo ($_SESSION["KullaniciID"]);
 
@@ -12,10 +21,6 @@ include("baglan.php");
 // echo ($_SESSION["soyadi"]);
 
 // Oturumda kullanıcıID var mı kontrol et
-if (!isset($_SESSION["KullaniciID"])) {
-    echo "Oturum bulunamadı. Giriş yapınız.";
-    exit();
-}
 
 // KullanıcıID'yi al
 $KullaniciID = $_SESSION["KullaniciID"];

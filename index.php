@@ -1,3 +1,13 @@
+<?php
+session_start();
+error_reporting(0);
+include 'baglan.php';
+$_SESSION["KullaniciID"] = $row["KullaniciID"];
+$_SESSION["adi"] = $row["Adi"];
+$_SESSION["soyadi"] = $row["Soyadi"];
+
+?>
+
 <!DOCTYPE html>
 <html style="font-size: 16px;" lang="tr">
 
@@ -39,11 +49,12 @@
         class="u-btn u-btn-round u-button-style u-hover-palette-1-light-1 u-palette-1-base u-radius u-btn-1" 
         data-bs-toggle="modal" 
         data-bs-target="#login"
-        style="font-size: 15px;">
-        LOG IN / SIGN UP
+        style="font-size: 14px;">
+        ÜYE OL / GİRİŞ YAP
 
       </a>
-      <img class="u-image u-image-contain u-image-default u-image-1" src="images/yemeksepetiV2.0-2.png" alt=""
+      
+      <img class="u-image u-image-contain u-image-default u-image-1" src="images\default-logo.png" alt="index.php"
         data-image-width="150" data-image-height="44">
     </div>
   </header>
@@ -132,21 +143,10 @@
       <div class="u-layout">
         <div class="u-layout-row">
           <div class="u-container-style u-layout-cell u-size-30 u-layout-cell-1">
-            <div
-              class="u-container-layout u-valign-bottom-lg u-valign-bottom-md u-valign-bottom-sm u-valign-bottom-xs u-container-layout-1">
-              <h3 class="u-text u-text-1"> Yemek ya da market, tüm ihtiyaçların kapında!</h3>
-              <div
-                class="u-container-style u-expanded-width-md u-expanded-width-sm u-expanded-width-xs u-group u-shape-rectangle u-group-1">
-                <div class="u-container-layout u-container-layout-2">
-                  <a href="#"
-                    class="u-align-right u-btn u-btn-round u-button-style u-hover-palette-1-light-1 u-palette-1-base u-radius u-btn-1">KEŞFET</a>
-                  <a href="#" class="u-btn u-button-style u-hover-palette-1-dark-1 u-palette-1-base u-btn-2">konum
-                    seç<br>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
+          <h3 class="u-text u-text-1 u-align-center " 
+          style=" display: flex; justify-content:center; align-items: center;"> Yemek ya da market, tüm ihtiyaçların kapında!</h3>
+
+          </div> 
           <div class="u-container-align-center u-container-style u-image u-layout-cell u-size-30 u-image-1"
             data-image-width="2449" data-image-height="1632">
             <div class="u-container-layout u-container-layout-3"></div>

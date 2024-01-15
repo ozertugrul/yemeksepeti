@@ -1,13 +1,14 @@
 <?php
 // Veritabanı bağlantısı
 include 'baglan.php';
+session_start();
 
 // Bağlantıyı kontrol et
 if ($conn->connect_error) {
     die("Veritabanı bağlantısı başarısız: " . $conn->connect_error);
 }
 
-// POST verilerini kontrol et
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Formdan gelen verileri al
     $eposta = $_POST["eposta"];
@@ -35,13 +36,35 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             exit();
         } else {
             $hata_mesaji = "Geçersiz şifre";
-            header("Location: error.php");
+            echo '<script>alert("Geçersiz Şifre");</script>';
+            echo '<script>
+              setTimeout(function() {
+                  window.location.href = "index.php";
+              }, 500); // 2 seconds
+          </script>';
         }
     } else {
-        header("Location: error.php");
         $hata_mesaji = "Geçersiz e-posta";
+        echo '<script>alert("Geçersiz e-posta");</script>';
+        echo '<script>
+              setTimeout(function() {
+                  window.location.href = "index.php";
+              }, 500; // 2 seconds
+          </script>';
     }
 }
+
+if (!isset($_SESSION["KullaniciID"])) {
+    echo "Lütfen oturum açınız. Anasayfaya Yönlendiriliyorsunuz!";
+    echo '<script>
+              setTimeout(function() {
+                  window.location.href = "index.php";
+              }, 2500); // 2 seconds
+          </script>';
+    exit();
+
+  }
+
 
 // Veritabanı bağlantısını kapat
 $conn->close();
