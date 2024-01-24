@@ -38,6 +38,7 @@ $KullaniciID = $_SESSION["KullaniciID"];
     <meta name="description" content="">
     <title>mainpage</title>
     <link rel="stylesheet" href="nc.css" media="screen">
+    <script class="u-script" type="text/javascript" src="assets/js/ertu.js" defer=""></script>
 
     <script class="u-script" type="text/javascript" src="jq.js" defer=""></script>
     <script class="u-script" type="text/javascript" src="nc.js" defer=""></script>

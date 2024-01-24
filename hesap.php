@@ -13,6 +13,8 @@
     <script class="u-script" type="text/javascript" src="Hesabım/js/nicepage.js" defer=""></script>
     <meta name="generator" content="Nicepage 6.2.1, nicepage.com">
     <meta name="referrer" content="origin">
+    <script class="u-script" type="text/javascript" src="assets/js/ertu.js" defer=""></script>
+
     <link rel="stylesheet" href="nc.css" media="screen">
 
     <script class="u-script" type="text/javascript" src="jq.js" defer=""></script>

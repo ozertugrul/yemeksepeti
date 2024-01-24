@@ -27,6 +27,7 @@ if ($result) {
     <meta name="keywords" content="">
     <meta name="description" content="">
     <title>mainpage</title>
+    <script class="u-script" type="text/javascript" src="assets/js/ertu.js" defer=""></script>
     <link rel="stylesheet" href="orders/css/nicepage.css" media="screen">
     <link rel="stylesheet" href="orders/css/Giriş.css" media="screen">
     <link rel="stylesheet" href="nc.css" media="screen">

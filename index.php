@@ -242,7 +242,7 @@ $_SESSION["soyadi"] = $row["Soyadi"];
                       class="custom-expanded u-container-style u-expanded-width-lg u-expanded-width-sm u-expanded-width-xl u-group u-image u-radius u-shape-round u-image-4"
                       data-image-width="612" data-image-height="407">
                       <div class="u-container-layout u-container-layout-9">
-                        <a href="#"
+                        <a href="//restoran.php?sehir=Antalya"
                           class="u-align-center u-btn u-button-style u-hover-palette-1-dark-1 u-palette-1-base u-btn-4">ANTALYA</a>
                       </div>
                     </div>
@@ -255,7 +255,7 @@ $_SESSION["soyadi"] = $row["Soyadi"];
                       class="u-container-style u-expanded-width-lg u-expanded-width-sm u-expanded-width-xl u-expanded-width-xs u-group u-image u-radius u-shape-round u-image-5"
                       data-image-width="1000" data-image-height="588">
                       <div class="u-container-layout u-container-layout-11">
-                        <a href="#"
+                        <a href="/restoran.php?sehir=Amasya"
                           class="u-align-center u-btn u-button-style u-hover-palette-1-dark-1 u-palette-1-base u-btn-5">AMASYA</a>
                       </div>
                     </div>

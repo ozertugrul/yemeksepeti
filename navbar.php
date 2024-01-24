@@ -70,7 +70,9 @@
                     <div class="u-inner-container-layout u-sidenav-overflow">
                         <div class="u-menu-close"></div>
                         <ul class="u-align-center u-nav u-popupmenu-items u-unstyled u-nav-3">
-                            <li class="u-nav-item"><a class="u-button-style u-nav-link">user_name</a>
+                            <li class="u-nav-item"><a class="u-button-style u-nav-link" style="padding: 10px 20px;">
+                                    <?php echo $adimiz; ?>
+                                </a>
                                 <div class="u-nav-popup">
                                     <ul class="u-h-spacing-20 u-nav u-unstyled u-v-spacing-10">
                                         <li class="u-nav-item"><a class="u-button-style u-nav-link"
@@ -92,8 +94,95 @@
                 </div>
                 <div class="u-black u-menu-overlay u-opacity u-opacity-70"></div>
             </div>
-        </nav><span class="u-file-icon u-icon u-icon-1" data-href="#"><img src="images/102665.png" alt=""></span>
-    </div>
-    
-</header>
+        </nav>
 
+
+        <span class="u-file-icon u-icon u-icon-1" id="sepetButonu" data-href="#">
+            <img src="images/102665.png" alt="">
+        </span>
+
+        <div class="sepet-container" id="sepetContainer">
+            <div style="display: flex;" id='sepett'>
+
+                <h6>Alışveriş Sepeti</h6> <button style="margin-left: 0;font-size: 1.5rem;" onclick='kapatSepet()'>X </button>
+            </div>
+            <ul id="sepetListesi">
+                <!-- Sepet içeriği buraya eklenecek -->
+            </ul>
+            <p id="toplamFiyat">
+            </p>
+            <a id="ode" href="checkout.php">öde</a>
+
+
+
+        </div>
+
+        <style>
+
+            .ode {
+                margin: 10px;
+                background-color: #ff3d81;
+            }
+
+            #sepett {
+                text-align: left;
+            }
+
+            #sepett h6 {
+                margin-right: auto;
+                /* H6 elementini sağa yaslar */
+            }
+
+            #sepett button {
+                background-color: transparent !important;
+
+
+                margin-left: 0;
+                /* X butonunu sola yaslar */
+            }
+
+            .u-file-icon {
+                cursor: pointer;
+            }
+
+            .sepet-container {
+                margin-top: 20px;
+                display: none;
+                position: fixed;
+                top: 8%;
+                left: 70%;
+                padding: 20px;
+                background-color: #333;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+                width: 400px;
+                max-height: 580px;
+                overflow-y: auto; 
+            }
+
+            /* Sepet içeriği stillendirmeleri */
+            #sepetListesi {
+                list-style: none;
+                padding: 0;
+            }
+
+            #sepetListesi li {
+                margin-bottom: 10px;
+            }
+
+
+            /* Sepet kapat butonu stillendirmeleri */
+            .sepet-container button {
+                
+                float: right;
+                background-color: transparent;
+                color: #fff;
+                border: none;
+                cursor: pointer;
+            }
+        </style>
+
+
+
+    </div>
+
+</header>

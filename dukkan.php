@@ -13,19 +13,19 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
 
   ?>
 
-<?php
+  <?php
 
-if (!isset($_SESSION["KullaniciID"])) {
-  echo "Lütfen oturum açınız. Anasayfaya Yönlendiriliyorsunuz!";
-  echo '<script>
+  if (!isset($_SESSION["KullaniciID"])) {
+    echo "Lütfen oturum açınız. Anasayfaya Yönlendiriliyorsunuz!";
+    echo '<script>
           setTimeout(function() {
               window.location.href = "index.php";
           }, 2500); // 2 seconds
       </script>';
-  exit();
+    exit();
 
-}
-?>
+  }
+  ?>
   <!DOCTYPE html>
   <html style="font-size: 16px;" lang="tr">
 
@@ -38,14 +38,17 @@ if (!isset($_SESSION["KullaniciID"])) {
     <link rel="stylesheet" href="nc.css" media="screen">
     <link rel="stylesheet" href="dukkan.css" media="screen">
     <script class="u-script" type="text/javascript" src="jq.js" defer=""></script>
+    <script class="u-script" type="text/javascript" src="assets/js/ertu.js" defer=""></script>
     <script class="u-script" type="text/javascript" src="nc.js" defer=""></script>
   </head>
 
-  <body style="background-color: #333; color: #fff" data-path-to-root="./" data-include-products="false" class="u-body u-xl-mode" data-lang="tr">
+  <body style="background-color: #333; color: #fff" data-path-to-root="./" data-include-products="false"
+    class="u-body u-xl-mode" data-lang="tr">
     <?php
     include("navbar.php");
     ?>
 
+    <!--///////////////////////// DÜKKANLAR /////////////////////////-->
     <section class="u-border-1 u-border-grey-60 u-border-no-left u-border-no-right u-border-no-top u-clearfix u-section-1"
       id="sec-30f1">
       <div class="u-clearfix u-sheet u-valign-middle-lg u-valign-middle-md u-valign-middle-xl u-sheet-1">
@@ -96,6 +99,8 @@ if (!isset($_SESSION["KullaniciID"])) {
         </div>
       </div>
     </section>
+
+    <!-- //////////////////////// ÜRÜNLER //////////////////////// -->
     <section class="u-clearfix u-section-2" id="sec-b89a">
       <div class="u-clearfix u-sheet u-sheet-1">
         <h5 class="u-text u-text-default u-text-1"><a style="color:#cd0048 !important;" href="sehirsec.php">Şehirler </a>
@@ -133,8 +138,17 @@ if (!isset($_SESSION["KullaniciID"])) {
                     <h6 class="u-align-right u-text u-text-3">
                       <?php echo ($Fiyat) ?>₺
                     </h6>
-                    <a href="https://nicepage.dev"
-                      class="u-align-center-xs u-border-1 u-border-active-custom-color-1 u-border-custom-color-1 u-border-hover-custom-color-1 u-btn u-btn-round u-button-style u-hover-custom-color-1 u-none u-radius u-text-active-custom-color-1 u-text-hover-white u-btn-1">+</a>
+
+                    <!-- Modified button with data attributes -->
+                    <button class="u-align-center-xs u-border-1 
+                      u-border-active-custom-color-1 u-border-custom-color-1 
+                      u-border-hover-custom-color-1 u-btn u-btn-round u-button-style 
+                      u-hover-custom-color-1 u-none u-radius 
+                      u-text-active-custom-color-1 u-text-hover-white u-btn-1 add-to-cart"
+                      data-product-id="<?php echo ($UrunID) ?>" data-product-name="<?php echo ($UrunAdi) ?>"
+                      data-product-price="<?php echo ($Fiyat) ?>">
+                      Sepete Ekle
+                    </button>
                   </div>
                 </div>
 

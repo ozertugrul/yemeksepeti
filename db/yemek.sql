@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.3
+-- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
 -- Anamakine: 127.0.0.1
--- Üretim Zamanı: 13 Oca 2024, 11:20:26
--- Sunucu sürümü: 10.1.36-MariaDB
--- PHP Sürümü: 5.6.38
+-- Üretim Zamanı: 23 Oca 2024, 23:50:20
+-- Sunucu sürümü: 10.4.32-MariaDB
+-- PHP Sürümü: 8.0.30
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -30,10 +29,10 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `dukkanlar` (
   `dukkan_id` int(11) NOT NULL,
-  `dukkan_resmi_adi` varchar(255) COLLATE utf8_turkish_ci NOT NULL,
-  `dukkan_adi` varchar(100) COLLATE utf8_turkish_ci NOT NULL,
-  `dukkan_adresi` varchar(255) COLLATE utf8_turkish_ci NOT NULL,
-  `dukkkan_sehiri` varchar(100) COLLATE utf8_turkish_ci NOT NULL,
+  `dukkan_resmi_adi` varchar(255) NOT NULL,
+  `dukkan_adi` varchar(100) NOT NULL,
+  `dukkan_adresi` varchar(255) NOT NULL,
+  `dukkkan_sehiri` varchar(100) NOT NULL,
   `dukkan_mstutar` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_turkish_ci;
 
@@ -44,7 +43,8 @@ CREATE TABLE `dukkanlar` (
 INSERT INTO `dukkanlar` (`dukkan_id`, `dukkan_resmi_adi`, `dukkan_adi`, `dukkan_adresi`, `dukkkan_sehiri`, `dukkan_mstutar`) VALUES
 (15, 'dukkanlogo/1705094027.png', 'Adana Dükkanı', 'Adananın en güzel yeri', 'Adana', 30),
 (16, 'dukkanlogo/1705096381.png', 'AMASYA Dükkanı', 'fgdjfjyhfıkjyfjyfh', 'Amasya', 50),
-(17, 'dukkanlogo/1705140647.jpg', 'Burger', 'Adananın en iyi yerinde', 'Adana', 50);
+(18, 'dukkanlogo/1705167803.png', 'adwad', 'awdsefrg', 'Düzce', 123),
+(19, 'dukkanlogo/1705347314.png', 'adwad', 'sengfjrdngjkdr', 'Erzurum', 123);
 
 -- --------------------------------------------------------
 
@@ -54,12 +54,12 @@ INSERT INTO `dukkanlar` (`dukkan_id`, `dukkan_resmi_adi`, `dukkan_adi`, `dukkan_
 
 CREATE TABLE `kullanicilar` (
   `KullaniciID` int(11) NOT NULL,
-  `Adi` varchar(50) COLLATE utf8_turkish_ci NOT NULL,
-  `Soyadi` varchar(50) COLLATE utf8_turkish_ci NOT NULL,
-  `Eposta` varchar(100) COLLATE utf8_turkish_ci NOT NULL,
-  `Sifre` varchar(100) COLLATE utf8_turkish_ci NOT NULL,
-  `cep_telefonu` varchar(100) COLLATE utf8_turkish_ci NOT NULL,
-  `dogum_tarihi` varchar(100) COLLATE utf8_turkish_ci NOT NULL
+  `Adi` varchar(50) NOT NULL,
+  `Soyadi` varchar(50) NOT NULL,
+  `Eposta` varchar(100) NOT NULL,
+  `Sifre` varchar(100) NOT NULL,
+  `cep_telefonu` varchar(100) NOT NULL,
+  `dogum_tarihi` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_turkish_ci;
 
 --
@@ -67,7 +67,12 @@ CREATE TABLE `kullanicilar` (
 --
 
 INSERT INTO `kullanicilar` (`KullaniciID`, `Adi`, `Soyadi`, `Eposta`, `Sifre`, `cep_telefonu`, `dogum_tarihi`) VALUES
-(1, 'Abdullah', 'DOĞAN', 'abdogan0306@gmail.com', 'A', '5522890631', '29.09.2003');
+(1, 'Abdullah', 'DOĞAN', 'abdogan0306@gmail.com', 'A', '5522890631', '29.09.2003'),
+(2, 'ertu', 'özer', 'a@a.com', '$2y$10$lg7WWKJoNKd4w.I1cRDQYeC4tC/jPyd641lUcvFebm/PW4zuoDyJq', '283432875', '2022-05-04'),
+(3, 'aa', 'aa', 'aa@a.com', '$2y$10$hycq4oJ9kbrj1VtpXdC6KOgfW4xLVmk8HdlTes2C.a35AZ30Hrmqy', '2345678', '2024-01-26'),
+(4, 'apoooğ', 'wadawd', 'w@a.com', '$2y$10$xjV4jMcW7Pk1Orahn6LCE.3uJjrClaWrmsVGnBQiwu3oTT9MdnFQ.', '34567', '2024-01-24'),
+(5, 'EREN', 'AŞKIN', 'eren@gmail.com', '$2y$10$YDi95MtnKa3oYoOFPGgrxuCU3ZcxgUVNz7QlhZHpQLmbs6ozCSqqC', '12345678', '5678-04-23'),
+(6, 'a', 'a', 'aaa@a.com', '$2y$10$tK5bp/Moei3mhrpW/oxu6ex8CqhS1dnC/vqqzd5zYi9WRwkso/FVW', '', '');
 
 -- --------------------------------------------------------
 
@@ -77,8 +82,8 @@ INSERT INTO `kullanicilar` (`KullaniciID`, `Adi`, `Soyadi`, `Eposta`, `Sifre`, `
 
 CREATE TABLE `sehirler` (
   `Id` int(11) NOT NULL,
-  `SehirAd` varchar(50) CHARACTER SET utf8 NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  `SehirAd` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Tablo döküm verisi `sehirler`
@@ -176,9 +181,8 @@ INSERT INTO `sehirler` (`Id`, `SehirAd`) VALUES
 CREATE TABLE `siparisler` (
   `SiparisID` int(11) NOT NULL,
   `KullaniciID` int(11) DEFAULT NULL,
-  `UrunID` int(11) DEFAULT NULL,
-  `Adet` int(11) DEFAULT NULL,
-  `Tarih` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
+  `Detay` varchar(255) DEFAULT NULL,
+  `Tarih` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_turkish_ci;
 
 -- --------------------------------------------------------
@@ -189,10 +193,10 @@ CREATE TABLE `siparisler` (
 
 CREATE TABLE `urunler` (
   `UrunID` int(11) NOT NULL,
-  `UrunAdi` varchar(100) COLLATE utf8_turkish_ci NOT NULL,
+  `UrunAdi` varchar(100) NOT NULL,
   `Fiyat` decimal(10,2) NOT NULL,
   `DukkanID` int(11) DEFAULT NULL,
-  `UrunResmi` varchar(100) COLLATE utf8_turkish_ci NOT NULL
+  `UrunResmi` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_turkish_ci;
 
 --
@@ -200,10 +204,12 @@ CREATE TABLE `urunler` (
 --
 
 INSERT INTO `urunler` (`UrunID`, `UrunAdi`, `Fiyat`, `DukkanID`, `UrunResmi`) VALUES
-(15, 'Mandalina', '0.00', 15, 'urunresmi/1705096696.png'),
-(16, 'Abdullah', '0.00', 15, 'urunresmi/1705139845.png'),
-(17, 'wdaw', '32.00', 15, 'urunresmi/1705140733.jpg'),
-(18, 'aaa', '65.00', 15, 'urunresmi/1705140746.png');
+(15, 'Mandalina', 0.00, 15, 'urunresmi/1705096696.png'),
+(16, 'Abdullah', 0.00, 15, 'urunresmi/1705139845.png'),
+(17, 'wdaw', 32.00, 15, 'urunresmi/1705140733.jpg'),
+(18, 'aaa', 65.00, 15, 'urunresmi/1705140746.png'),
+(20, 'yahya dürüm', 0.00, 18, 'urunresmi/1705167859.png'),
+(21, 'dürüm', 12.00, 19, 'urunresmi/1705347350.png');
 
 -- --------------------------------------------------------
 
@@ -213,8 +219,8 @@ INSERT INTO `urunler` (`UrunID`, `UrunAdi`, `Fiyat`, `DukkanID`, `UrunResmi`) VA
 
 CREATE TABLE `yetkili` (
   `id` int(11) NOT NULL,
-  `username` varchar(100) COLLATE utf8_turkish_ci NOT NULL,
-  `password` varchar(100) COLLATE utf8_turkish_ci NOT NULL
+  `username` varchar(100) NOT NULL,
+  `password` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_turkish_ci;
 
 --
@@ -254,8 +260,7 @@ ALTER TABLE `sehirler`
 --
 ALTER TABLE `siparisler`
   ADD PRIMARY KEY (`SiparisID`),
-  ADD KEY `KullaniciID` (`KullaniciID`),
-  ADD KEY `UrunID` (`UrunID`);
+  ADD KEY `KullaniciID` (`KullaniciID`);
 
 --
 -- Tablo için indeksler `urunler`
@@ -278,25 +283,25 @@ ALTER TABLE `yetkili`
 -- Tablo için AUTO_INCREMENT değeri `dukkanlar`
 --
 ALTER TABLE `dukkanlar`
-  MODIFY `dukkan_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
+  MODIFY `dukkan_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- Tablo için AUTO_INCREMENT değeri `kullanicilar`
 --
 ALTER TABLE `kullanicilar`
-  MODIFY `KullaniciID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `KullaniciID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- Tablo için AUTO_INCREMENT değeri `siparisler`
 --
 ALTER TABLE `siparisler`
-  MODIFY `SiparisID` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `SiparisID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- Tablo için AUTO_INCREMENT değeri `urunler`
 --
 ALTER TABLE `urunler`
-  MODIFY `UrunID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `UrunID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- Tablo için AUTO_INCREMENT değeri `yetkili`
@@ -312,8 +317,7 @@ ALTER TABLE `yetkili`
 -- Tablo kısıtlamaları `siparisler`
 --
 ALTER TABLE `siparisler`
-  ADD CONSTRAINT `siparisler_ibfk_1` FOREIGN KEY (`KullaniciID`) REFERENCES `kullanicilar` (`KullaniciID`),
-  ADD CONSTRAINT `siparisler_ibfk_2` FOREIGN KEY (`UrunID`) REFERENCES `urunler` (`UrunID`);
+  ADD CONSTRAINT `siparisler_ibfk_1` FOREIGN KEY (`KullaniciID`) REFERENCES `kullanicilar` (`KullaniciID`);
 
 --
 -- Tablo kısıtlamaları `urunler`
