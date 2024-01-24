@@ -7,16 +7,26 @@ if (isset($_SESSION['username'])) {
     $id = $_GET['id'];
     $sql = "DELETE FROM `urunler` WHERE `UrunID` = $id";
     if ($conn->query($sql) === TRUE) {
-        echo "Ürün Başarıyla Silindi";
+        echo "Lütfen Bekleyiniz.";
+        echo '<script>alert("Ürün Başarıyla Silindi.");</script>';
+                echo '<script>
+                  setTimeout(function() {
+                      window.location.href = "sehirsec.php";
+                  }, 1000); // 1    seconds
+              </script>';
     } else {
-        echo "Hata: Silinemedi";
+        echo "Lütfen Bekleyiniz.";
+        echo '<script>alert("Ürün Silinemedi Yeniden Deneyiniz.");</script>';
+                echo '<script>
+                  setTimeout(function() {
+                      window.location.href = "sehirsec.php";
+                  }, 1000); // 1    seconds
+              </script>';
     }
 
 } else 
     {
     session_destroy();
-    // Eğer POST isteği yoksa, bir hata mesajı yazdır
     header("Location: index.php");
-    
     }
 ?>

@@ -24,7 +24,13 @@ if ($result->num_rows > 0) {
 
 } else {
     // Kullanıcı doğrulanamadı, hata mesajı veya başka bir işlem
-    echo "Kullanıcı adı veya şifre hatalı.";
+    echo "Lütfen Bekleyiniz.";
+    echo '<script>alert("Kullanıcı adı veya şifre hatalı.");</script>';
+            echo '<script>
+              setTimeout(function() {
+                  window.location.href = "index.php";
+              }, 1000); // 1    seconds
+          </script>';
 }
 
 // Veritabanı bağlantısını kapat

@@ -52,8 +52,13 @@ if (isset($_GET['sehir'])) {
 
 
           <form action="dukkanekle.php"  method="post" enctype="multipart/form-data" style="padding: 10px;">
-            <p class="u-form-group u-form-text u-text u-text-2">Dükkan Logosu&nbsp;</p>
-            <input type="file" name="resim"/>
+            
+
+            <div class="u-form-group u-form-name">
+            <label class="u-label">Dükkan Logosu</label>
+            <input type="file" class="u-input" name="resim"/>
+            </div>
+
             <div class="u-form-group u-form-name">
               <label class="u-label">Dükkan Adı</label>
               <input type="text"  name="dukkan_adi" class="u-input u-input-rectangle" required="">
@@ -66,6 +71,7 @@ if (isset($_GET['sehir'])) {
               <label class="u-label">Dükkan Adresi</label>
               <textarea rows="3" cols="50" name="dukkan_adresi" class="u-input u-input-rectangle" required=""></textarea>
             </div>
+            <br>
             <div class="u-align-left u-form-group u-form-submit">
               <input type="hidden" name="dukkan_sehir" value="<?php echo($selectedCity)?>">
               <input type="submit" value="KAYDET" >
@@ -100,14 +106,14 @@ if (isset($_GET['sehir'])) {
                 <img class="custom-expanded u-image u-image-round u-radius u-image-1" src="<?php echo $DukkanResim?>" alt="" data-image-width="400" data-image-height="225">
                 <a href="urun.php?id=<?php echo $DukkanID;?>"><h5 class="u-align-left u-text u-text-default u-text-2"><?php echo $RestoranAdi; ?></h5></a>
                 <h6 class="u-align-left u-text u-text-default u-text-3"><?php echo $Minsepet; ?>₺ min. sepet tutarı</h6>
-                <a href="dukkansil.php?id=<?php echo $DukkanID;?>" class="u-active-none u-border-2 u-border-no-left u-border-no-right u-border-no-top u-border-palette-1-base u-btn u-btn-rectangle u-button-style u-hover-none u-none u-btn-1">Sil<br>
+                <a href="dukkansil.php?id=<?php echo $DukkanID;?>" class="u-active-none u-border-palette-1-base u-btn u-btn-rectangle u-button-style u-hover-none u-none u-btn-1">Sil<br>
                 </a>
               </div>
             </div>
             <?php
         }
       } else {
-        echo "Belirtilen şehirde dükkan bulunamadı.";
+        
       }
       ?>
             
