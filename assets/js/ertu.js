@@ -46,42 +46,44 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Sepete Ekle butonlarına tıklama event listener'ını ekle
     var addToCartButtons = document.querySelectorAll('.add-to-cart');
+    var currentStoreID = null;
     addToCartButtons.forEach(function (button) {
         button.addEventListener('click', function () {
-            // Ürün bilgilerini al
             var productId = button.getAttribute('data-product-id');
+            var storeId = button.getAttribute('data-store-id');
+
+            if (currentStoreID === null) {
+                currentStoreID = storeId;
+            } else if (currentStoreID !== storeId) {
+                alert("You can only add products from one store at a time.");
+                return;
+            }
+
             var productName = button.getAttribute('data-product-name');
             var productPrice = parseFloat(button.getAttribute('data-product-price'));
 
-            // Sepet öğesini oluştur
             var cartItem = {
                 id: productId,
                 name: productName,
                 price: productPrice,
-                quantity: 1
+                quantity: 1,
+                toplamFiyat: toplam
             };
 
-            // Sepet öğesini localStorage'den al
             var cart = JSON.parse(localStorage.getItem('cart')) || [];
 
-            // Sepeti kontrol et
             var existingItem = cart.find(item => item.id === productId);
             if (existingItem) {
-                // Ürün zaten sepette varsa adetini artır
                 existingItem.quantity++;
             } else {
-                // Sepette yoksa yeni öğeyi ekle
                 cart.push(cartItem);
             }
 
-            // Sepeti güncelle
             localStorage.setItem('cart', JSON.stringify(cart));
 
-            // Sepet içeriğini güncelle, toplam fiyatı ve ara toplamı hesapla, +/- butonlarını ekle
             guncelleSepetIcerik();
 
-            // İsteğe bağlı: Kullanıcıya bildirim göster
-            alert(productName + " sepete eklendi!");
+            alert(productName + " added to the cart!");
         });
     });
 });
@@ -181,6 +183,31 @@ function artirAzaltSepetItem(itemId, amount) {
 
 //////////////////////////////////
 
+
+function odemeYap() {
+    var cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+    if (cart.length === 0) {
+        alert("Your cart is empty. Add items to proceed.");
+        return;
+    }
+
+    var araToplam = cart.reduce(function (total, item) {
+        return total + item.quantity * item.price;
+    }, 0);
+
+    // Check the minimum cart amount based on the current store
+    var minimumCartAmount = 100; // Replace with the actual minimum amount for the current store
+
+    if (araToplam < minimumCartAmount) {
+        alert("Minimum cart amount not reached. Please add more items to proceed.");
+        return;
+    }
+
+    // ... (existing code)
+}
+
+
 // Ödeme butonuna tıklandığında çağrılacak fonksiyon
 function odemeYap() {
     // Sepeti localStorage'den al
@@ -266,3 +293,6 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 });
+
+
+

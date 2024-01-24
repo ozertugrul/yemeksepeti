@@ -54,14 +54,18 @@
 
         // Sipariş varsa ekrana yazdırılır, yoksa uygun mesaj yazdırılır
         if ($result->num_rows > 0) {
-          while ($row = $result->fetch_assoc()) {
-            // Sipariş bilgilerini ekrana yazdır
-            echo 
-            "<abc> Sipariş Numarası: " . $row["SiparisID"] . 
-            " <br>Tarih: ". "" . $row["Tarih"] .
-            "  <br>İçerik: " . $row["Detay"] . 
+          while ($row = $result->fetch_assoc()) {?>
             
-             "<br><br></abc>";
+            <div class="abc">
+              <p> <strong> Sipariş Numarası:  <?php echo $row["SiparisID"]?></strong>  </p>
+           <p> Tarih: <?php echo $row["Tarih"] ?> </p>
+           <p> İçerik: <?php echo  $row["Detay"]?> </p> 
+            </div>
+           <div class="yatay-ayirici">
+
+           </div>
+            
+             <?php
           }
         } else {
           // Henüz sipariş vermemiş mesajını yazdır
@@ -79,6 +83,15 @@
   </section>
 
   <style>
+    p{
+      margin: 0px!important;
+    }
+    .yatay-ayirici {
+      width: 100%;
+      height: 2px;
+      background-color: #000; /* Ayırıcı rengi */
+      margin: 10px 0; /* İstenilen boşluk miktarı */
+    }
     .ship{
       justify-content: center;
       font-size: 2rem !important;
@@ -90,13 +103,15 @@
       display: inline;
       font-size: 2rem !important;
     }
-    abc{
+    .abc{
+      
       position: relative;
       margin: auto; 
       font-size: 1.125rem !important;
-      border-style: solid !important;
-      border-width: 10px !important;
+
     }
+
+
   </style>
 
   <?php

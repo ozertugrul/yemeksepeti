@@ -28,16 +28,18 @@ $KullaniciID = $_SESSION["KullaniciID"];
 // Formdan gelen verileri al
 $cep_telefonu = $_POST["cep_tel"];
 $dogum_tarihi = $_POST["dog_tar"];
-
+$adKaydet =  $_POST["kullaniciadi"];
+$Soyadi = $_POST["Soyadi"];
 // Kullanıcı ID'sini session'dan al
 $userId = $_SESSION["KullaniciID"];
+$Adres = $_POST["Adres"];
 
 // Veriyi güncelleme sorgusu
-$sql = "UPDATE kullanicilar SET cep_telefonu = '$cep_telefonu', dogum_tarihi = '$dogum_tarihi' WHERE KullaniciID = $userId";
+$sql = "UPDATE kullanicilar SET Adi = '$adKaydet', Adres = '$Adres', Soyadi = '$Soyadi',   cep_telefonu = '$cep_telefonu', dogum_tarihi = '$dogum_tarihi' WHERE KullaniciID = $userId";
 
 // Güncelleme sorgusunu çalıştırma
 if ($conn->query($sql) === TRUE) {
-    echo "Bilgiler başarıyla güncellendi.";
+    echo  "Bilgiler başarıyla güncellendi.";
 } else {
     echo "Güncelleme hatası: " . $conn->error;
 }

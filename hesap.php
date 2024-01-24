@@ -97,6 +97,7 @@
         $soyadi = $row["Soyadi"];
         // $cep_telefonu = $row["TelNo"];
         $email = $row["Eposta"];
+        $adres = $row["Adres"];
         // $dogum_tarihi = $row["dogumTarihi"];
         $cep_telefonu = isset($row["cep_telefonu"]) ? $row["cep_telefonu"] : '';
         $dogum_tarihi = isset($row["dogum_tarihi"]) ? $row["dogum_tarihi"] : '';
@@ -125,17 +126,17 @@
                     style="padding: 10px;">
                     <div class="u-form-group u-form-name">
                         <label for="name-888f" class="u-label">Adı</label>
-                        <input type="text" placeholder="Adınızı girin" id="name-888f" name="name"
+                        <input type="text" placeholder="" id="name-888f" name="kullaniciadi"
                             class="u-input u-input-rectangle" required="" value="<?php echo $kullaniciAdi; ?>">
                     </div>
                     <div class="u-form-email u-form-group">
                         <label for="email-888f" class="u-label">Soyadı</label>
-                        <input type="text" placeholder="Geçerli bir e-posta adresi girin" id="email-888f" name="email"
+                        <input type="text" placeholder="" id="kullanicisoyad;" name="Soyadi"
                             class="u-input u-input-rectangle" required="" value="<?php echo $soyadi; ?>">
                     </div>
                     <div class="u-form-group u-form-group-3">
                         <label for="text-de91" class="u-label">Cep Telefonu</label>
-                        <input type="number" placeholder="" id="text-de91" name="cep_tel"
+                        <input type="number" placeholder="L]tf" id="text-de91" name="cep_tel"
                             class="u-input u-input-rectangle" value="<?php echo $cep_telefonu; ?>">
                     </div>
                     <div class="u-form-group u-form-group-4">
@@ -143,6 +144,14 @@
                         <input type="date" placeholder="" id="text-cd7d" name="dog_tar"
                             class="u-input u-input-rectangle" value="<?php echo $dogum_tarihi; ?>">
                     </div>
+
+                    <div class="u-form-group u-form-group-4">
+                        <label for="text-cd7d" class="u-label">Adres</label>
+                        <input type="text" placeholder="" id="text-cd7d" name="Adres"
+                            class="u-input u-input-rectangle" value="<?php echo $adres; ?>">
+                    </div>
+
+
                     <div class="u-align-left u-form-group u-form-submit">
                         <a href="#" class="u-btn u-btn-submit u-button-style u-btn-1">Kaydet</a>
                         <input type="submit" value="Bilgileri Güncelle" class="u-form-control-hidden">
@@ -152,8 +161,6 @@
                     <div class="u-form-send-error u-form-send-message"> Bilgileriniz Güncellenemedi. Lütfen hataları
                         düzeltin ve
                         tekrar deneyin. </div> -->
-                    <input type="hidden" value="" name="recaptchaResponse">
-                    <input type="hidden" name="formServices" value="9bfb2388-8725-da11-403c-a37036628e2c">
                 </form>
             </div>
             <div class="u-border-2 u-border-grey-dark-1 u-line u-line-horizontal u-opacity u-opacity-40 u-line-1"></div>
