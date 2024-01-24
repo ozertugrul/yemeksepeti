@@ -1,8 +1,22 @@
+-- phpMyAdmin SQL Dump
+-- version 5.2.1
+-- https://www.phpmyadmin.net/
+--
+-- Anamakine: 127.0.0.1
+-- Üretim Zamanı: 24 Oca 2024, 23:34:50
+-- Sunucu sürümü: 10.4.32-MariaDB
+-- PHP Sürümü: 8.0.30
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
 SET time_zone = "+00:00";
 
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
 
 --
 -- Veritabanı: `yemek`
@@ -47,20 +61,20 @@ CREATE TABLE `kullanicilar` (
   `Sifre` varchar(100) NOT NULL,
   `cep_telefonu` varchar(100) NOT NULL,
   `dogum_tarihi` varchar(100) NOT NULL,
-  `Adres` varchar(225) NOT NULL,
+  `Adres` varchar(225) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_turkish_ci;
 
 --
 -- Tablo döküm verisi `kullanicilar`
 --
 
-INSERT INTO `kullanicilar` (`KullaniciID`, `Adi`, `Soyadi`, `Eposta`, `Sifre`, `cep_telefonu`, `dogum_tarihi`) VALUES
-(1, 'Abdullah', 'DOĞAN', 'abdogan0306@gmail.com', 'A', '5522890631', '29.09.2003'),
-(2, 'ertu', 'özer', 'a@a.com', '$2y$10$lg7WWKJoNKd4w.I1cRDQYeC4tC/jPyd641lUcvFebm/PW4zuoDyJq', '283432875', '2022-05-04'),
-(3, 'aa', 'aa', 'aa@a.com', '$2y$10$hycq4oJ9kbrj1VtpXdC6KOgfW4xLVmk8HdlTes2C.a35AZ30Hrmqy', '2345678', '2024-01-26'),
-(4, 'apoooğ', 'wadawd', 'w@a.com', '$2y$10$xjV4jMcW7Pk1Orahn6LCE.3uJjrClaWrmsVGnBQiwu3oTT9MdnFQ.', '34567', '2024-01-24'),
-(5, 'EREN', 'AŞKIN', 'eren@gmail.com', '$2y$10$YDi95MtnKa3oYoOFPGgrxuCU3ZcxgUVNz7QlhZHpQLmbs6ozCSqqC', '12345678', '5678-04-23'),
-(6, 'a', 'a', 'aaa@a.com', '$2y$10$tK5bp/Moei3mhrpW/oxu6ex8CqhS1dnC/vqqzd5zYi9WRwkso/FVW', '', '');
+INSERT INTO `kullanicilar` (`KullaniciID`, `Adi`, `Soyadi`, `Eposta`, `Sifre`, `cep_telefonu`, `dogum_tarihi`, `Adres`) VALUES
+(1, 'Abdullah', 'DOĞAN', 'abdogan0306@gmail.com', 'A', '5522890631', '29.09.2003', ''),
+(2, 'ertu', 'özer', 'a@a.com', '$2y$10$lg7WWKJoNKd4w.I1cRDQYeC4tC/jPyd641lUcvFebm/PW4zuoDyJq', '283432875', '2022-05-04', ''),
+(3, 'aa', 'aa', 'aa@a.com', '$2y$10$hycq4oJ9kbrj1VtpXdC6KOgfW4xLVmk8HdlTes2C.a35AZ30Hrmqy', '2345678', '2024-01-26', ''),
+(4, 'apoooğ', 'wadawd', 'w@a.com', '$2y$10$xjV4jMcW7Pk1Orahn6LCE.3uJjrClaWrmsVGnBQiwu3oTT9MdnFQ.', '34567', '2024-01-24', ''),
+(5, 'EREN', 'AŞKIN', 'eren@gmail.com', '$2y$10$YDi95MtnKa3oYoOFPGgrxuCU3ZcxgUVNz7QlhZHpQLmbs6ozCSqqC', '12345678', '5678-04-23', ''),
+(6, 'ertu', 'ozer', 'aaa@a.com', '$2y$10$tK5bp/Moei3mhrpW/oxu6ex8CqhS1dnC/vqqzd5zYi9WRwkso/FVW', '5421823395', '2002-08-06', 'amasyaaaa');
 
 -- --------------------------------------------------------
 
@@ -173,6 +187,25 @@ CREATE TABLE `siparisler` (
   `Tarih` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_turkish_ci;
 
+--
+-- Tablo döküm verisi `siparisler`
+--
+
+INSERT INTO `siparisler` (`SiparisID`, `KullaniciID`, `Detay`, `Tarih`) VALUES
+(13, 6, '<ul>5 x Abdullah - 0₺<br>4 x wdaw - 128₺<br></ul>', '24.01.2024 17:57:56'),
+(14, 6, '<ul>4 x Abdullah - 0₺<br>3 x Mandalina - 0₺<br>3 x aaa - 195₺<br></ul>', '24.01.2024 18:00:29'),
+(15, 6, '<ul>4 x Abdullah - 0₺<br>3 x Mandalina - 0₺<br>3 x aaa - 195₺<br></ul>', '24.01.2024 18:08:32'),
+(16, 6, '<ul>4 x wdaw - 128₺<br></ul>', '24.01.2024 18:42:09'),
+(17, 6, '<ul>1 x aaa - 65₺<br></ul>', '24.01.2024 18:42:54'),
+(18, 6, '<ul><li>1 x Mandalina - 0₺</li><br> Toplam Tutar: 0</ul>', '24.01.2024 18:44:08'),
+(19, 6, '<ul><li>1 x aaa - 65 ₺</li><br> Toplam Tutar: 65 ₺</ul>', '24.01.2024 18:45:48'),
+(20, 6, '<ul><li>4 x wdaw - 128 ₺</li></ul><br> Toplam Tutar: 128 ₺', '24.01.2024 18:46:42'),
+(21, 6, '<p>Sepet boş.</p>', '24.01.2024 18:48:29'),
+(22, 6, '<ul><li>3 x wdaw - 96 ₺</li></ul><br> <p> Toplam Tutar: 96 ₺</p>', '24.01.2024 19:00:55'),
+(23, 6, '<ul><li>3 x Mandalina - 0 ₺</li><li>1 x dürüm - 12 ₺</li></ul><br> <p> Toplam Tutar: 12 ₺</p>', '24.01.2024 20:47:39'),
+(24, 6, '<ul><li>1 x Mandalina - 0 ₺</li></ul><br> <p> Toplam Tutar: 0 ₺</p>', '24.01.2024 20:54:25'),
+(25, 6, '<ul><li>1 x wdaw - 32 ₺</li><li>1 x aaa - 65 ₺</li></ul><br> <p> Toplam Tutar: 97 ₺</p>', '24.01.2024 20:58:54');
+
 -- --------------------------------------------------------
 
 --
@@ -283,7 +316,7 @@ ALTER TABLE `kullanicilar`
 -- Tablo için AUTO_INCREMENT değeri `siparisler`
 --
 ALTER TABLE `siparisler`
-  MODIFY `SiparisID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `SiparisID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
 -- Tablo için AUTO_INCREMENT değeri `urunler`
