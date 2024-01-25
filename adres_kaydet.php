@@ -28,14 +28,14 @@ $KullaniciID = $_SESSION["KullaniciID"];
 // Formdan gelen verileri al
 $Adres = $_POST["Adres"];
 
+
 // Veriyi güncelleme sorgusu
 $sql = "UPDATE kullanicilar SET Adres = '$Adres' WHERE KullaniciID = $KullaniciID";
 
-// Güncelleme sorgusunu çalıştırma
 if ($conn->query($sql) === TRUE) {
-    echo  "Bilgiler başarıyla güncellendi.";
+    echo '<script>alert("Bilgiler başarıyla güncellendi.");</script>';
 } else {
-    echo "Güncelleme hatası: " . $conn->error;
+    echo '<script>alert("Güncelleme hatası: ' . $conn->error . '");</script>';
 }
 
 // Veritabanı bağlantısını kapatma
