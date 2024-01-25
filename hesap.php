@@ -136,7 +136,7 @@
                     </div>
                     <div class="u-form-group u-form-group-3">
                         <label for="text-de91" class="u-label">Cep Telefonu</label>
-                        <input type="number" placeholder="Cep Telefon Numaranızı Giriniz" id="text-de91" name="cep_tel"
+                        <input type="number" placeholder="Lütfen cep numaranızı giriniz" id="text-de91" name="cep_tel"
                             class="u-input u-input-rectangle" value="<?php echo $cep_telefonu; ?>">
                     </div>
                     <div class="u-form-group u-form-group-4">
@@ -147,7 +147,7 @@
 
                     <div class="u-form-group u-form-group-4">
                         <label for="text-cd7d" class="u-label">Adres</label>
-                        <input type="text" placeholder="Adresinizi Girin" id="text-cd7d" name="Adres"
+                        <input type="text" placeholder="Lütfen adresinizi giriniz." id="text-cd7d" name="Adres"
                             class="u-input u-input-rectangle" value="<?php echo $adres; ?>">
                     </div>
 

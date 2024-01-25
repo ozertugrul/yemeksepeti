@@ -9,7 +9,13 @@ $dukkansehirim=$_POST['dukkan_sehir'];
 if (isset($_FILES['resim'])) {
     $hata = $_FILES['resim']['error']; //resim inputundan gönderilen hatayı aldık.
     if ($hata != 0) { // hata kontrolü gerçekleştirdik.
-        echo 'Resim gönderilirken bir hata gerçekleşti.';
+        echo "Lütfen Bekleyiniz.";
+        echo '<script>alert("Resim gönderilirken bir hata gerçekleşti.");</script>';
+                echo '<script>
+                  setTimeout(function() {
+                      window.location.href = "sehirsec.php";
+                  }, 1000); // 1    seconds
+              </script>';
     } else {
         $resimBoyutu = $_FILES['resim']['size']; // resim boyutunu öğrendik
         if ($resimBoyutu > (1024 * 1024 * 5)) {
@@ -17,7 +23,13 @@ if (isset($_FILES['resim'])) {
             //2 rakamını mb olarak görün ve kaç yaparsanız o mb anlamına gelir.
             //Örn: (1024 * 1024 * 3) => 3MB / (1024 * 1024 * 4) => 4MB
 
-            echo 'Resim 2MB den büyük olamaz.';
+            echo "Lütfen Bekleyiniz.";
+            echo '<script>alert("Resim 5MB den büyük olamaz.");</script>';
+                    echo '<script>
+                      setTimeout(function() {
+                          window.location.href = "sehirsec.php";
+                      }, 1000); // 1    seconds
+                  </script>';
         } else {
             $tip = $_FILES['resim']['type']; //resim tipini öğrendik.
             $resimAdi = $_FILES['resim']['name']; //resmin adını öğrendik.
@@ -34,14 +46,37 @@ if (isset($_FILES['resim'])) {
                     $sql = "INSERT INTO dukkanlar (dukkan_adi, dukkan_adresi, dukkan_mstutar, dukkkan_sehiri, dukkan_resmi_adi) VALUES ('$DukkaninAdi', '$dukkaninadresi', '$minimumsepettutar', '$dukkansehirim', '$yeni_adi')";
                     
                 if ($conn->query($sql) === TRUE) {
-                        echo "Yeni kayıt başarıyla eklendi";
+                    echo "Lütfen Bekleyiniz.";
+                    echo '<script>alert("Yeni kayıt başarıyla eklendi.");</script>';
+                            echo '<script>
+                              setTimeout(function() {
+                                  window.location.href = "sehirsec.php";
+                              }, 1000); // 1    seconds
+                          </script>';
                     } else {
-                        echo "Hata: Aynı Adrese Sahip Birden Fazla Dükkan Olamaz";
+                        echo "Lütfen Bekleyiniz.";
+                        echo '<script>alert("Hata: Aynı Adrese Sahip Birden Fazla Dükkan Olamaz");</script>';
+                                echo '<script>
+                                  setTimeout(function() {
+                                      window.location.href = "sehirsec.php";
+                                  }, 1000); // 1    seconds
+                              </script>';
                     }
-                } else echo 'Resim yüklenirken bir hata oluştu.';
+                } else  echo "Lütfen Bekleyiniz.";
+                        echo '<script>
+                          setTimeout(function() {
+                              window.location.href = "sehirsec.php";
+                          }, 1000); // 1    seconds
+                      </script>';
             }
              else {
-                echo 'Yanlızca JPG ve PNG resim gönderebilirsiniz.';
+                echo "Lütfen Bekleyiniz.";
+                echo '<script>alert("Yanlızca JPG ve PNG resim gönderebilirsiniz..");</script>';
+                        echo '<script>
+                          setTimeout(function() {
+                              window.location.href = "sehirsec.php";
+                          }, 1000); // 1    seconds
+                      </script>';
             }
         }
     }

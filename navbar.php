@@ -37,7 +37,7 @@
                     <ul class="u-nav u-unstyled u-nav-1">
                         <li class="u-nav-item"><a
                                 class="u-button-style u-nav-link u-text-active-black u-text-hover-palette-2-base"
-                                style="padding: 10px 20px;">
+                                style="padding: 10px 20px; color:#fff!important;">
                                 <?php echo $adimiz; ?>
                             </a>
 
@@ -52,7 +52,7 @@
                                     <a class="u-button-style u-nav-link u-white" href="hesap.php">Hesabım</a>
                                 </li>
                                 <li class="u-nav-item">
-                                    <a class="u-button-style u-nav-link u-white" href="#">Yardım Merkezi</a>
+                                    <a class="u-button-style u-nav-link u-white" href="help.php">Yardım Merkezi</a>
                                 </li>
                                 <li class="u-nav-item">
                                     <a class="u-button-style u-nav-link u-white" href="logout.php">Çıkış Yap </a>
@@ -76,11 +76,11 @@
                                 <div class="u-nav-popup">
                                     <ul class="u-h-spacing-20 u-nav u-unstyled u-v-spacing-10">
                                         <li class="u-nav-item"><a class="u-button-style u-nav-link"
-                                                href="#">Siparişlerim</a>
+                                                href="order.php">Siparişlerim</a>
                                         </li>
-                                        <li class="u-nav-item"><a class="u-button-style u-nav-link" href="#">Hesabım</a>
+                                        <li class="u-nav-item"><a class="u-button-style u-nav-link" href="hesap.php">Hesabım</a>
                                         </li>
-                                        <li class="u-nav-item"><a class="u-button-style u-nav-link" href="#">Yardım
+                                        <li class="u-nav-item"><a class="u-button-style u-nav-link" href="help.php">Yardım
                                                 Merkezi</a>
                                         </li>
                                         <li class="u-nav-item"><a class="u-button-style u-nav-link"

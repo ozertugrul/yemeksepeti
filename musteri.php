@@ -110,7 +110,7 @@ $KullaniciID = $_SESSION["KullaniciID"];
     <section class="u-clearfix u-section-3" id="sec-8479">
         <div class="u-clearfix u-sheet u-sheet-1">
             <p
-                class="u-align-center-sm u-align-center-xs u-align-left-lg u-align-left-md u-align-left-xl u-text u-text-black u-text-default u-text-1">
+                class="u-align-center-sm u-align-center-xs u-align-left-lg u-align-left-md u-align-left-xl u-text u-text-white u-text-default u-text-1">
                 Türkiye'nin her şehrindeyiz!</p>
             <div
                 class="data-layout-selected u-clearfix u-expanded-width-md u-expanded-width-sm u-expanded-width-xs u-layout-wrap u-layout-wrap-1">
@@ -124,7 +124,7 @@ $KullaniciID = $_SESSION["KullaniciID"];
                                         <div class="u-container-style u-expanded-width-lg u-expanded-width-xl u-expanded-width-xs u-group u-image u-radius u-shape-round u-image-1"
                                             data-image-width="525" data-image-height="360">
                                             <div class="u-container-layout u-container-layout-2">
-                                                <a href="#"
+                                                <a href="restoran.php?sehir=İzmir"
                                                     class="u-align-left u-btn u-button-style u-hover-palette-1-dark-1 u-palette-1-base u-btn-1">İZMİR</a>
                                             </div>
                                         </div>
@@ -136,8 +136,8 @@ $KullaniciID = $_SESSION["KullaniciID"];
                                         <div class="u-container-style u-expanded-width-lg u-expanded-width-sm u-expanded-width-xl u-expanded-width-xs u-group u-image u-radius u-shape-round u-image-2"
                                             data-image-width="1600" data-image-height="900">
                                             <div class="u-container-layout u-container-layout-4">
-                                                <a href="#"
-                                                    class="u-align-center u-border-none u-btn u-button-style u-btn-2">ANKARA</a>
+                                                <a href="restoran.php?sehir=Ankara"
+                                                    class="u-align-center u-border-none u-btn u-button-style u-btn-2 u-hover-palette-1-dark-1 u-palette-1-base">ANKARA</a>
                                             </div>
                                         </div>
                                     </div>
@@ -148,7 +148,7 @@ $KullaniciID = $_SESSION["KullaniciID"];
                                         <div class="u-container-style u-expanded-width-lg u-expanded-width-sm u-expanded-width-xl u-expanded-width-xs u-group u-image u-radius u-shape-round u-image-3"
                                             data-image-width="612" data-image-height="398">
                                             <div class="u-container-layout u-container-layout-6">
-                                                <a href="#"
+                                                <a href="restoran.php?sehir=İstanbul"
                                                     class="u-align-center u-btn u-button-style u-hover-palette-1-dark-1 u-palette-1-base u-btn-3">İSTANBUL</a>
                                             </div>
                                         </div>
@@ -167,7 +167,7 @@ $KullaniciID = $_SESSION["KullaniciID"];
                                         <div class="custom-expanded u-container-style u-expanded-width-lg u-expanded-width-sm u-expanded-width-xl u-group u-image u-radius u-shape-round u-image-4"
                                             data-image-width="612" data-image-height="407">
                                             <div class="u-container-layout u-container-layout-9">
-                                                <a href="#"
+                                                <a href="restoran.php?sehir=Antalya"
                                                     class="u-align-center u-btn u-button-style u-hover-palette-1-dark-1 u-palette-1-base u-btn-4">ANTALYA</a>
                                             </div>
                                         </div>
@@ -179,7 +179,7 @@ $KullaniciID = $_SESSION["KullaniciID"];
                                         <div class="u-container-style u-expanded-width-lg u-expanded-width-sm u-expanded-width-xl u-expanded-width-xs u-group u-image u-radius u-shape-round u-image-5"
                                             data-image-width="1000" data-image-height="588">
                                             <div class="u-container-layout u-container-layout-11">
-                                                <a href="#"
+                                                <a href="restoran.php?sehir=Amasya"
                                                     class="u-align-center u-btn u-button-style u-hover-palette-1-dark-1 u-palette-1-base u-btn-5">AMASYA</a>
                                             </div>
                                         </div>
@@ -200,7 +200,7 @@ $KullaniciID = $_SESSION["KullaniciID"];
     </section>
     <section class="u-clearfix u-section-4" id="sec-e612">
         <div class="u-clearfix u-sheet u-sheet-1">
-            <p class="u-text u-text-black u-text-1">Mobil uygulamam​ızı indirin</p>
+            <p class="u-text u-text-white u-text-1">Mobil uygulamam​ızı indirin</p>
             <div
                 class="custom-expanded u-container-style u-custom-color-3 u-expanded-width-lg u-expanded-width-md u-group u-radius u-shape-round u-group-1">
                 <div class="u-container-layout u-valign-top-xs u-container-layout-1">

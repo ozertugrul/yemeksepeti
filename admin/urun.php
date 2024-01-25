@@ -80,8 +80,13 @@ if (isset($_GET['id'])) {
         <div class="u-align-center u-form u-form-1">
 
         <form action="urunekle.php"  method="post" enctype="multipart/form-data" style="padding: 10px;">
-            <p class="u-form-group u-form-text u-text u-text-2">Ürün Resmi&nbsp;</p>
-            <input type="file" name="resim"/>
+            
+
+            <div class="u-form-group u-form-name">
+            <label class="u-label">Ürün Resmi</label>
+            <input type="file" class="u-input" name="resim"/>
+            </div>
+
             <div class="u-form-group u-form-name">
               <label class="u-label">Ürün Adı</label>
               <input type="text"  name="urun_adi" class="u-input u-input-rectangle" required="">
@@ -93,7 +98,7 @@ if (isset($_GET['id'])) {
             <div class="u-align-left u-form-group u-form-submit">
               <input type="hidden" name="urun_dukkani" value="<?php echo($secilenDukkan)?>">
 
-
+<br>
               <input type="submit" value="KAYDET" >
             </div>
           </form>

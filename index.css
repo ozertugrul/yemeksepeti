@@ -1196,9 +1196,9 @@
  }
 
  .u-section-4 .u-text-1 {
-   font-size: 1.875rem;
-   margin: 41px 1007px 0 49px;
- }
+  font-size: 1.875rem;
+  margin: 41px 669px 0 49px!important;
+}
 
  .u-section-4 .u-group-1 {
    width: 1285px;
@@ -1232,7 +1232,7 @@
 
    .u-section-4 .u-text-1 {
      margin-top: 61px;
-     margin-right: 815px;
+     margin-right: 400px;
      margin-left: 0;
    }
 
@@ -1249,7 +1249,7 @@
    }
 
    .u-section-4 .u-text-2 {
-     margin-right: 622px;
+     margin-right: 400px;
      margin-left: 17px;
    }
 
