@@ -19,10 +19,10 @@
   <script class="u-script" type="text/javascript" src="nc.js" defer=""></script>
 </head>
 
-</head>
 
 <body style="background-color: #333; color: #fff" data-path-to-root="./" data-include-products="false"
   class="u-body u-xl-mode" data-lang="tr">
+
   <?php
   session_start();
 
@@ -43,7 +43,7 @@
 
   <section class="u-clearfix u-section-1" id="sec-15d7">
     <div class="u-clearfix u-sheet u-sheet-1">
-      <h5 class="u-text u-text-default u-text-3">Önceki Siparişlerim</h5>
+      <h5 style="margin-top: 50px;" class="u-text u-text-default u-text-3">Önceki Siparişlerim</h5>
       <div id="ship">
 
         <?php

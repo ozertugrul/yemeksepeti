@@ -406,9 +406,7 @@ a {
   -webkit-text-decoration-skip: objects;
 }
 a:active,
-a:hover {
-  outline-width: 0;
-}
+
 abbr[title] {
   border-bottom: none;
   text-decoration: underline;
@@ -1099,7 +1097,7 @@ ol {
   color: inherit;
 }
 .u-text:not(ul):not(ol):not(p):not(.u-post-content):not(.u-block-content):not(.u-product-desc):not(.u-cart-block-content):not(.u-checkout-block-content) a,
-.u-text:not(ul):not(ol):not(p):not(.u-post-content):not(.u-block-content):not(.u-product-desc):not(.u-cart-block-content):not(.u-checkout-block-content) a:hover {
+.u-text:not(ul):not(ol):not(p):not(.u-post-content):not(.u-block-content):not(.u-product-desc):not(.u-cart-block-content):not(.u-checkout-block-content) f {
   text-decoration: none;
 }
 .u-link,
@@ -3184,10 +3182,7 @@ a {
   color: #259bca;
   text-decoration: none;
 }
-a:hover {
-  color: #0676a4;
-  border-bottom: 2px solid black;
-}
+
 a:focus {
   outline: thin dotted;
   outline: 5px auto -webkit-focus-ring-color;
@@ -15402,7 +15397,7 @@ div.u-video,
   padding: 0;
 }
 .u-nav-item {
-  display: inline-block;
+  display: block;
   position: relative;
   vertical-align: middle;
   padding: 0;
