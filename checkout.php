@@ -52,7 +52,7 @@
     ?>
 
     <form action="checkoutorder.php" method="POST">
-        <?php include("navbar.php") ?>
+        
         <input type="hidden" name="siparisdetay" value="<?php
         $cart = json_decode($_POST['cart'], true);
 

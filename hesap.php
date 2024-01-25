@@ -136,7 +136,7 @@
                     </div>
                     <div class="u-form-group u-form-group-3">
                         <label for="text-de91" class="u-label">Cep Telefonu</label>
-                        <input type="number" placeholder="L]tf" id="text-de91" name="cep_tel"
+                        <input type="number" placeholder="Cep Telefon Numaranızı Giriniz" id="text-de91" name="cep_tel"
                             class="u-input u-input-rectangle" value="<?php echo $cep_telefonu; ?>">
                     </div>
                     <div class="u-form-group u-form-group-4">
@@ -147,7 +147,7 @@
 
                     <div class="u-form-group u-form-group-4">
                         <label for="text-cd7d" class="u-label">Adres</label>
-                        <input type="text" placeholder="" id="text-cd7d" name="Adres"
+                        <input type="text" placeholder="Adresinizi Girin" id="text-cd7d" name="Adres"
                             class="u-input u-input-rectangle" value="<?php echo $adres; ?>">
                     </div>
 
@@ -172,7 +172,7 @@
                     <div class="u-form-email u-form-group">
                         <label for="email-888f" class="u-form-control-hidden u-label"></label>
                         <input type="email" placeholder="Geçerli bir e-posta adresi girin" id="email-888f" name="email"
-                            class="u-input u-input-rectangle" required="" value="<?php echo $email; ?> " disabled>
+                            class="u-input u-input-rectangle" required="" value="<?php echo $email; ?> ">
                     </div>
                     <div class="u-align-left u-form-group u-form-submit">
                         <a href="#" class="u-btn u-btn-submit u-button-style u-btn-2">Kaydet</a>
@@ -229,13 +229,14 @@
             <p class="u-text u-text-default u-text-4">Henüz kayıtlı ödeme seçeneğiniz yok.<br>
             </p>
             <div class="u-border-2 u-border-grey-dark-1 u-line u-line-horizontal u-opacity u-opacity-40 u-line-4"></div>
+
             <h4 class="u-text u-text-5">Hesap Yönetimi<br>
             </h4>
             <p class="u-text u-text-6">Hesabınızı ve onunla ilişkilendirilmiş kişisel verileri silebilirsiniz.<br>
             </p>
-            <a href="#"
+            <a href="hesap_sil.php"
                 class="u-border-2 u-border-hover-grey-75 u-border-palette-2-base u-btn u-button-style u-none u-text-palette-2-base u-btn-4">Hesabımı
-                Sil</a> <!--hesap silmek için atama yapmamız lazım -->
+                Sil</a>
             <div class="u-border-2 u-border-grey-dark-1 u-line u-line-horizontal u-opacity u-opacity-40 u-line-5"></div>
         </div>
     </section>
