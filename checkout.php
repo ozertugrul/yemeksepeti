@@ -13,6 +13,7 @@ session_start();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="utf-8">
     <link rel="stylesheet" href="checkout1/css/nicepage.css" media="screen">
+    <script class="u-script" type="text/javascript" src="Hesabım/js/js.js" defer=""></script>
     <link rel="stylesheet" href="checkout1/css/Giriş.css" media="screen">
     <script class="u-script" type="text/javascript" src="checkout1/js/jquery.js" defer=""></script>
     <script class="u-script" type="text/javascript" src="checkout1/js/nicepage.js" defer=""></script>
@@ -125,26 +126,22 @@ session_start();
                             class="u-border-1 u-border-grey-dark-1 u-line u-line-horizontal u-opacity u-opacity-30 u-line-1">
                         </div>
                         <div class="custom-expanded u-form u-form-1">
-                            <form action="hesap_kaydet.php"
+                            <form action="adres_kaydet.php"
                                 class="u-clearfix u-form-spacing-10 u-form-vertical u-inner-form" source="email"
                                 name="form" style="padding: 10px;">
                                 <div class="u-form-group u-form-group-4">
-                                    <label for="text-cd7d" class="u-label">Adres</label>
+                                    <label for="text-cd7d" class="u-label">Yukarıdaki adres yanlış ise yeni adresi giriniz.</label>
                                     <input type="text" placeholder="Adresinizi Girin" id="text-cd7d" name="Adres"
                                         class="u-input u-input-rectangle" style="height: 80px; font-size: 24px;"
                                         value="<?php echo $adres; ?>">
                                 </div>
                                 <div class="u-align-left u-form-group u-form-submit">
                                     <a href="#"
-                                        class="u-btn u-btn-round u-btn-submit u-button-style u-radius u-btn-1">Kaydet ve
+                                        class="u-btn u-btn-round u-btn-submit u-button-style u-radius u-btn-1" onclick="veriyiGuncelle()">Kaydet ve
                                         Devam Et</a>
                                     <input type="submit" value="submit" class="u-form-control-hidden">
                                 </div>
-                                <div class="u-form-send-message u-form-send-success"> Teşekkür ederiz! Mesajınız
-                                    gönderildi.
-                                </div>
-                                <div class="u-form-send-error u-form-send-message"> Mesajınız gönderilemedi. Lütfen hataları
-                                    düzeltin ve tekrar deneyin. </div>
+                                
                                 <input type="hidden" value="" name="recaptchaResponse">
                                 <input type="hidden" name="formServices" value="3dcd58ca-cc55-d47a-4147-06ade69da26d">
                             </form>
@@ -195,7 +192,7 @@ session_start();
                 <div class="u-container-layout u-container-layout-3">
                     <h2 class="u-text u-text-default u-text-11">Kişisel Bilgiler</h2>
                     <div class="u-form u-form-2">
-                        <form action="hesap_kaydet.php" method="POST"
+                        <form action="tel_kaydet.php" method="POST"
                             class="u-clearfix u-form-spacing-10 u-form-vertical u-inner-form" source="email"
                             name="form-1" style="padding: 10px;">
                             <div class="u-form-email u-form-group">
@@ -207,12 +204,12 @@ session_start();
                             <div class="u-form-group u-form-name">
                                 <label for="name-d17b" class="u-label">Adı</label>
                                 <input type="text" placeholder="Adınızı girin" id="name-d17b" name="kullaniciadi"
-                                    class="u-input u-input-rectangle" required="" value="<?php echo $kullaniciAdi; ?>">
+                                    class="u-input u-input-rectangle" required="" value="<?php echo $kullaniciAdi; ?>" disabled>
                             </div>
                             <div class="u-form-group u-form-group-5">
                                 <label for="text-8af3" class="u-label">Soyadı</label>
                                 <input type="text" placeholder="" id="text-8af3" name="Soyadi"
-                                    class="u-input u-input-rectangle" required="" value="<?php echo $soyadi; ?>">
+                                    class="u-input u-input-rectangle" required="" value="<?php echo $soyadi; ?>" disabled>
                             </div>
                             <div class="u-form-group u-form-group-6">
                                 <label for="text-d57b" class="u-label">Cep Telefonu</label>
@@ -220,14 +217,11 @@ session_start();
                                     class="u-input u-input-rectangle" value="<?php echo $cep_telefonu; ?>">
                             </div>
                             <div class="u-form-group u-form-submit">
-                                <a href="#" class="u-btn u-btn-round u-btn-submit u-button-style u-radius u-btn-2">
+                                <a href="#" class="u-btn u-btn-round u-btn-submit u-button-style u-radius u-btn-2" onclick="veriyiGuncelle()">
                                     Kaydet ve Devam Et</a>
                                 <input type="submit" value="submit" class="u-form-control-hidden">
                             </div>
-                            <div class="u-form-send-message u-form-send-success"> Teşekkür ederiz! Mesajınız gönderildi.
-                            </div>
-                            <div class="u-form-send-error u-form-send-message"> Mesajınız gönderilemedi. Lütfen hataları
-                                düzeltin ve tekrar deneyin. </div>
+                            
                             <input type="hidden" value="" name="recaptchaResponse">
                             <input type="hidden" name="formServices" value="3dcd58ca-cc55-d47a-4147-06ade69da26d">
                         </form>
@@ -243,38 +237,35 @@ session_start();
                             source="email" name="form-1" style="padding: 10px;">
                             <div class="u-form-email u-form-group">
                                 <label for="email-d17b" class="u-label">Kart üzerindeki isim</label>
-                                <input type="email" placeholder="Kart üzerindeki isim" id="email-d17b" name="email"
-                                    class="u-input u-input-rectangle" required="">
+                                <input type="email" placeholder="Ömer Ertuğrul Abdullah" id="email-d17b" name="email"
+                                    class="u-input u-input-rectangle" required="" disabled>
                             </div>
                             <div class="u-form-group">
                                 <label for="name-d17b" class="u-label">kart numarası</label>
-                                <input type="text" placeholder="kart numarası girin" id="name-d17b" name="name"
-                                    class="u-input u-input-rectangle" required="required">
+                                <input type="text" placeholder="212002008 , 212002002 , 212002013" id="name-d17b" name="name"
+                                    class="u-input u-input-rectangle" required="required" disabled>
                             </div>
                             <div class="u-form-group u-form-partition-factor-2 u-form-group-10">
                                 <label for="text-376a" class="u-label">Ay</label>
-                                <input type="text" placeholder="" id="text-376a" name="text-3"
-                                    class="u-input u-input-rectangle">
+                                <input type="text" placeholder="Ocak" id="text-376a" name="text-3"
+                                    class="u-input u-input-rectangle" disabled>
                             </div>
                             <div class="u-form-group u-form-partition-factor-2 u-form-group-11">
                                 <label for="text-e7fc" class="u-label">Yıl</label>
-                                <input type="text" placeholder="" id="text-e7fc" name="text-2"
-                                    class="u-input u-input-rectangle">
+                                <input type="text" placeholder="2024" id="text-e7fc" name="text-2"
+                                    class="u-input u-input-rectangle" disabled>
                             </div>
                             <div class="u-form-group u-form-group-12">
                                 <label for="text-a9a4" class="u-label">CVV</label>
-                                <input type="text" placeholder="" id="text-a9a4" name="text"
-                                    class="u-input u-input-rectangle">
+                                <input type="text" placeholder="000" id="text-a9a4" name="text"
+                                    class="u-input u-input-rectangle" disabled>
                             </div>
                             <div class="u-form-group u-form-submit">
                                 <a href="#"
-                                    class="u-btn u-btn-round u-btn-submit u-button-style u-radius u-btn-3">Kaydet</a>
+                                    class="u-btn u-btn-round u-btn-submit u-button-style u-radius u-btn-3" onclick="kartGuncelle()">Kaydet</a>
                                 <input type="submit" value="submit" class="u-form-control-hidden">
                             </div>
-                            <div class="u-form-send-message u-form-send-success"> Teşekkür ederiz! Mesajınız gönderildi.
-                            </div>
-                            <div class="u-form-send-error u-form-send-message"> Mesajınız gönderilemedi. Lütfen hataları
-                                düzeltin ve tekrar deneyin. </div>
+                            
                             <input type="hidden" value="" name="recaptchaResponse">
                             <input type="hidden" name="formServices" value="3dcd58ca-cc55-d47a-4147-06ade69da26d">
                         </form>

@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="Hesabım/css/Giriş.css" media="screen">
     <script class="u-script" type="text/javascript" src="Hesabım/js/jquery.js" defer=""></script>
     <script class="u-script" type="text/javascript" src="Hesabım/js/nicepage.js" defer=""></script>
+    <script class="u-script" type="text/javascript" src="Hesabım/js/js.js" defer=""></script>
     <meta name="generator" content="Nicepage 6.2.1, nicepage.com">
     <meta name="referrer" content="origin">
     <script class="u-script" type="text/javascript" src="assets/js/ertu.js" defer=""></script>
@@ -153,14 +154,10 @@
 
 
                     <div class="u-align-left u-form-group u-form-submit">
-                        <a href="#" class="u-btn u-btn-submit u-button-style u-btn-1">Kaydet</a>
+                        <a href="#" class="u-btn u-btn-submit u-button-style u-btn-1" onclick="veriyiGuncelle()">Kaydet</a>
                         <input type="submit" value="Bilgileri Güncelle" class="u-form-control-hidden">
                     </div>
-                    <!-- <div class="u-form-send-message u-form-send-success"> Teşekkür ederiz! Bilgileriniz Güncellendi.
-                    </div>
-                    <div class="u-form-send-error u-form-send-message"> Bilgileriniz Güncellenemedi. Lütfen hataları
-                        düzeltin ve
-                        tekrar deneyin. </div> -->
+                    
                 </form>
             </div>
             <div class="u-border-2 u-border-grey-dark-1 u-line u-line-horizontal u-opacity u-opacity-40 u-line-1"></div>
@@ -175,14 +172,10 @@
                             class="u-input u-input-rectangle" required="" value="<?php echo $email; ?> ">
                     </div>
                     <div class="u-align-left u-form-group u-form-submit">
-                        <a href="#" class="u-btn u-btn-submit u-button-style u-btn-2">Kaydet</a>
+                        <a href="#" class="u-btn u-btn-submit u-button-style u-btn-2" onclick="veriyiGuncelle()">Kaydet</a>
                         <input type="submit" value="submit" class="u-form-control-hidden">
                     </div>
-                    <div class="u-form-send-message u-form-send-success"> Teşekkür ederiz! E-Posta'nız Güncellendi.
-                    </div>
-                    <div class="u-form-send-error u-form-send-message"> E-Posta'nız Güncellenemedi. Lütfen hataları
-                        düzeltin ve
-                        tekrar deneyin. </div>
+                    
                     <input type="hidden" value="" name="recaptchaResponse">
                     <input type="hidden" name="formServices" value="9bfb2388-8725-da11-403c-a37036628e2c">
                 </form>
@@ -212,14 +205,10 @@
                             class="u-input u-input-rectangle">
                     </div>
                     <div class="u-align-left u-form-group u-form-submit">
-                        <a href="#" class="u-btn u-btn-submit u-button-style u-btn-2">Kaydet</a>
+                        <a href="#" class="u-btn u-btn-submit u-button-style u-btn-2" onclick="veriyiGuncelle()">Kaydet</a>
                         <input type="submit" value="submit" class="u-form-control-hidden">
                     </div>
-                    <div class="u-form-send-message u-form-send-success"> Teşekkür ederiz! Şifreniz Güncellendi. </div>
-                    <div class="u-form-send-error u-form-send-message"> Şifreniz Güncellenemedi. Lütfen mevcut şifrenizi
-                        doğru
-                        giriniz ve
-                        tekrar deneyiniz. </div>
+                    
 
                 </form>
             </div>
