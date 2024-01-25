@@ -32,11 +32,10 @@ $cep_telefonu = $_POST["cep_tel"];
 // Veriyi güncelleme sorgusu
 $sql = "UPDATE kullanicilar SET cep_telefonu = '$cep_telefonu' WHERE KullaniciID = $KullaniciID";
 
-// Güncelleme sorgusunu çalıştırma
 if ($conn->query($sql) === TRUE) {
-    echo  "Bilgiler başarıyla güncellendi.";
+    echo '<script>alert("Bilgiler başarıyla güncellendi.");</script>';
 } else {
-    echo "Güncelleme hatası: " . $conn->error;
+    echo '<script>alert("Güncelleme hatası: ' . $conn->error . '");</script>';
 }
 
 // Veritabanı bağlantısını kapatma

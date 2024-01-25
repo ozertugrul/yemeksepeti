@@ -60,7 +60,7 @@ session_start();
     // KullanıcıID'yi al
     $KullaniciID = $_SESSION["KullaniciID"];
 
-    $sql = "SELECT * FROM Kullanicilar";
+    $sql = "SELECT * FROM kullanicilar";
     $result = $conn->query($sql);
 
     // Veriyi ekrana yazdırma
@@ -141,8 +141,11 @@ session_start();
                                         Devam Et</a>
                                     <input type="submit" value="submit" class="u-form-control-hidden">
                                 </div>
+<<<<<<< HEAD
                                 
                                
+=======
+>>>>>>> 05d042d4447d39f0d3900f56660ea4cf5f15ac69
                             </form>
                         </div>
                 </div>
@@ -192,7 +195,11 @@ session_start();
                     <h2 class="u-text u-text-default u-text-11">Kişisel Bilgiler</h2>
                     <div class="u-form u-form-2">
                         <form action="tel_kaydet.php" method="POST"
+<<<<<<< HEAD
                             class="u-clearfix u-form-spacing-10 u-form-vertical u-inner-form" 
+=======
+                            class="u-clearfix u-form-spacing-10 u-form-vertical u-inner-form"
+>>>>>>> 05d042d4447d39f0d3900f56660ea4cf5f15ac69
                             name="form-1" style="padding: 10px;">
                             <div class="u-form-email u-form-group">
                                 <label for="email-d17b" class="u-label">Email</label>
@@ -216,11 +223,18 @@ session_start();
                                     class="u-input u-input-rectangle" value="<?php echo $cep_telefonu; ?>">
                             </div>
                             <div class="u-form-group u-form-submit">
+<<<<<<< HEAD
                                 <a href="#" class="u-btn u-btn-round u-btn-submit u-button-style u-radius u-btn-2">
                                     Kaydet ve Devam Et</a>
                                 <input type="submit" value="submit" class="u-form-control-hidden">
                             </div>
                             
+=======
+                                <a href="#" class="u-btn u-btn-round u-btn-submit u-button-style u-radius u-btn-2" >
+                                    Kaydet ve Devam Et</a>
+                                <input type="submit" value="submit" class="u-form-control-hidden">
+                            </div>
+>>>>>>> 05d042d4447d39f0d3900f56660ea4cf5f15ac69
                         </form>
                     </div>
                 </div>
