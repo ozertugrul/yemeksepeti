@@ -126,8 +126,8 @@ session_start();
                             class="u-border-1 u-border-grey-dark-1 u-line u-line-horizontal u-opacity u-opacity-30 u-line-1">
                         </div>
                         <div class="custom-expanded u-form u-form-1">
-                            <form action="adres_kaydet.php"
-                                class="u-clearfix u-form-spacing-10 u-form-vertical u-inner-form" source="email"
+                            <form action="adres_kaydet.php" method="POST"
+                                class="u-clearfix u-form-spacing-10 u-form-vertical u-inner-form"
                                 name="form" style="padding: 10px;">
                                 <div class="u-form-group u-form-group-4">
                                     <label for="text-cd7d" class="u-label">Yukarıdaki adres yanlış ise yeni adresi giriniz.</label>
@@ -137,13 +137,12 @@ session_start();
                                 </div>
                                 <div class="u-align-left u-form-group u-form-submit">
                                     <a href="#"
-                                        class="u-btn u-btn-round u-btn-submit u-button-style u-radius u-btn-1" onclick="veriyiGuncelle()">Kaydet ve
+                                        class="u-btn u-btn-round u-btn-submit u-button-style u-radius u-btn-1">Kaydet ve
                                         Devam Et</a>
                                     <input type="submit" value="submit" class="u-form-control-hidden">
                                 </div>
                                 
-                                <input type="hidden" value="" name="recaptchaResponse">
-                                <input type="hidden" name="formServices" value="3dcd58ca-cc55-d47a-4147-06ade69da26d">
+                               
                             </form>
                         </div>
                 </div>
@@ -193,7 +192,7 @@ session_start();
                     <h2 class="u-text u-text-default u-text-11">Kişisel Bilgiler</h2>
                     <div class="u-form u-form-2">
                         <form action="tel_kaydet.php" method="POST"
-                            class="u-clearfix u-form-spacing-10 u-form-vertical u-inner-form" source="email"
+                            class="u-clearfix u-form-spacing-10 u-form-vertical u-inner-form" 
                             name="form-1" style="padding: 10px;">
                             <div class="u-form-email u-form-group">
                                 <label for="email-d17b" class="u-label">Email</label>
@@ -217,13 +216,11 @@ session_start();
                                     class="u-input u-input-rectangle" value="<?php echo $cep_telefonu; ?>">
                             </div>
                             <div class="u-form-group u-form-submit">
-                                <a href="#" class="u-btn u-btn-round u-btn-submit u-button-style u-radius u-btn-2" onclick="veriyiGuncelle()">
+                                <a href="#" class="u-btn u-btn-round u-btn-submit u-button-style u-radius u-btn-2">
                                     Kaydet ve Devam Et</a>
                                 <input type="submit" value="submit" class="u-form-control-hidden">
                             </div>
                             
-                            <input type="hidden" value="" name="recaptchaResponse">
-                            <input type="hidden" name="formServices" value="3dcd58ca-cc55-d47a-4147-06ade69da26d">
                         </form>
                     </div>
                 </div>

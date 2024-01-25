@@ -83,7 +83,7 @@
             <a href="https://www.linkedin.com/in/omrrciftcii" target="_blank">
                 <div class="contact-card">
                     <img src="assets/omer.jpeg" alt="Person 3">
-                    <p><b>Secretary</b></p>
+                    <p><b>CTO</b></p>
                     Ömer Çiftçi
                 </div>
             </a>
