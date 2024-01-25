@@ -60,7 +60,7 @@ session_start();
     // KullanıcıID'yi al
     $KullaniciID = $_SESSION["KullaniciID"];
 
-    $sql = "SELECT * FROM Kullanicilar";
+    $sql = "SELECT * FROM kullanicilar";
     $result = $conn->query($sql);
 
     // Veriyi ekrana yazdırma
@@ -128,6 +128,8 @@ session_start();
                         <div class="custom-expanded u-form u-form-1">
                             <form action="adres_kaydet.php" method="POST"
                                 class="u-clearfix u-form-spacing-10 u-form-vertical u-inner-form"
+                            <form action="adres_kaydet.php" method="POST"
+                                class="u-clearfix u-form-spacing-10 u-form-vertical u-inner-form"
                                 name="form" style="padding: 10px;">
                                 <div class="u-form-group u-form-group-4">
                                     <label for="text-cd7d" class="u-label">Yukarıdaki adres yanlış ise yeni adresi giriniz.</label>
@@ -137,6 +139,7 @@ session_start();
                                 </div>
                                 <div class="u-align-left u-form-group u-form-submit">
                                     <a href="#"
+                                        class="u-btn u-btn-round u-btn-submit u-button-style u-radius u-btn-1">Kaydet ve
                                         class="u-btn u-btn-round u-btn-submit u-button-style u-radius u-btn-1">Kaydet ve
                                         Devam Et</a>
                                     <input type="submit" value="submit" class="u-form-control-hidden">
@@ -192,7 +195,7 @@ session_start();
                     <h2 class="u-text u-text-default u-text-11">Kişisel Bilgiler</h2>
                     <div class="u-form u-form-2">
                         <form action="tel_kaydet.php" method="POST"
-                            class="u-clearfix u-form-spacing-10 u-form-vertical u-inner-form" 
+                            class="u-clearfix u-form-spacing-10 u-form-vertical u-inner-form"
                             name="form-1" style="padding: 10px;">
                             <div class="u-form-email u-form-group">
                                 <label for="email-d17b" class="u-label">Email</label>
@@ -216,6 +219,7 @@ session_start();
                                     class="u-input u-input-rectangle" value="<?php echo $cep_telefonu; ?>">
                             </div>
                             <div class="u-form-group u-form-submit">
+                                <a href="#" class="u-btn u-btn-round u-btn-submit u-button-style u-radius u-btn-2" >
                                 <a href="#" class="u-btn u-btn-round u-btn-submit u-button-style u-radius u-btn-2">
                                     Kaydet ve Devam Et</a>
                                 <input type="submit" value="submit" class="u-form-control-hidden">
