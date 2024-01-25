@@ -1,38 +1,42 @@
+<?php
+
+// Veritabanı bağlantısını burada tanımlayın
+include 'baglan.php';
+session_start();
+
+?>
 <!DOCTYPE html>
 <html style="font-size: 16px;" lang="tr">
 
 <head>
+    <title>Ödeme</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="utf-8">
-    <meta name="keywords" content="Kişisel Bilgiler, Kart Bilgileri">
-    <meta name="description" content="">
-    <title>Giriş</title>
     <link rel="stylesheet" href="checkout1/css/nicepage.css" media="screen">
     <link rel="stylesheet" href="checkout1/css/Giriş.css" media="screen">
     <script class="u-script" type="text/javascript" src="checkout1/js/jquery.js" defer=""></script>
     <script class="u-script" type="text/javascript" src="checkout1/js/nicepage.js" defer=""></script>
-    <script class="u-script" type="text/javascript" src="assets/js/ertu.js" defer=""></script>
-
-    <link rel="stylesheet" href="nc.css" media="screen">
-
     <script class="u-script" type="text/javascript" src="jq.js" defer=""></script>
     <script class="u-script" type="text/javascript" src="nc.js" defer=""></script>
+    <script class="u-script" type="text/javascript" src="assets/js/ertu.js" defer=""></script>
+    <link rel="stylesheet" href="nc.css" media="screen">
+
+
+
+
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
 </head>
 
 <body style="background-color: #333; color: #fff" data-path-to-root="./" data-include-products="false"
     class="u-body u-xl-mode" data-lang="tr">
+
     <?php
+    include("navbar.php");
+    ?>
 
-    // Veritabanı bağlantısını burada tanımlayın
-    include 'baglan.php';
-    // Bağlantı kontrolü
-    if ($conn->connect_error) {
-        die("Veritabanı bağlantısı başarısız: " . $conn->connect_error);
-    }
-
-
-    session_start();
+    <?php
 
     // echo ($_SESSION["KullaniciID"]);
     
@@ -106,9 +110,7 @@
     ?>
 
 
-    <?php
-    include("navbar.php");
-    ?>
+
     <section class="u-clearfix u-section-1" id="sec-e7a8">
         <div class="u-clearfix u-sheet u-sheet-1">
             <div
@@ -129,7 +131,8 @@
                                 <div class="u-form-group u-form-group-4">
                                     <label for="text-cd7d" class="u-label">Adres</label>
                                     <input type="text" placeholder="Adresinizi Girin" id="text-cd7d" name="Adres"
-                                        class="u-input u-input-rectangle" style="height: 80px; font-size: 24px;" value="<?php echo $adres; ?>">
+                                        class="u-input u-input-rectangle" style="height: 80px; font-size: 24px;"
+                                        value="<?php echo $adres; ?>">
                                 </div>
                                 <div class="u-align-left u-form-group u-form-submit">
                                     <a href="#"
@@ -140,8 +143,7 @@
                                 <div class="u-form-send-message u-form-send-success"> Teşekkür ederiz! Mesajınız
                                     gönderildi.
                                 </div>
-                                <div class="u-form-send-error u-form-send-message"> Mesajınız gönderilemedi. Lütfen
-                                    hataları
+                                <div class="u-form-send-error u-form-send-message"> Mesajınız gönderilemedi. Lütfen hataları
                                     düzeltin ve tekrar deneyin. </div>
                                 <input type="hidden" value="" name="recaptchaResponse">
                                 <input type="hidden" name="formServices" value="3dcd58ca-cc55-d47a-4147-06ade69da26d">
@@ -153,14 +155,37 @@
                 class="u-border-1 u-border-grey-75 u-container-style u-expanded-width-sm u-expanded-width-xs u-group u-radius u-shape-round u-group-2">
                 <div class="u-container-layout u-container-layout-2">
                     <h3 class="u-text u-text-default u-text-2">Siparişiniz</h3>
-                    <h6 class="u-text u-text-default u-text-3">ürünler yaz</h6>
-                    <h6 class="u-text u-text-default u-text-4">66.50 TL</h6>
-                    <h6 class="u-text u-text-default u-text-5">Ara Toplam</h6>
-                    <h6 class="u-text u-text-default u-text-6">Gönderim Ücreti</h6>
-                    <h6 class="u-text u-text-default u-text-7">ücretsiz</h6>
-                    <h4 class="u-text u-text-default u-text-8">Siparişiniz</h4>
-                    <h4 class="u-text u-text-default u-text-9">66.50 TL</h4>
-                    <h6 class="u-text u-text-default u-text-10">(KDV Dahil)</h6>
+
+
+
+                    <div class="u-text  u-text-3">
+
+                        <?php
+                        // Sepet içeriğini localStorage'dan al
+                        $cart = json_decode($_POST['cart'], true);
+
+                        if ($cart) {
+                            // Sepet boş değilse içeriği yazdır
+                            echo '<ul>';
+                            static $totalPrice = 0;
+                            foreach ($cart as $item) {
+                                echo '<li>' . $item['quantity'] . ' x ' . $item['name'] . ' - ' . ($item['quantity'] * $item['price']) . ' ₺</li>';
+                                $totalPrice += $item['quantity'] * $item['price'];
+                            }
+
+                            echo '</ul>';   
+                            echo '<h6 class="u-text u-text-default u-text-6">Gönderim Ücreti</h6>';
+                            echo '<h6 class="u-text u-text-default u-text-7">ücretsiz</h6>';
+                            echo '<br> <p><h4 class="u-text u-text-default u-text-8">Siparişiniz</h4></p>';
+                            // Second PHP block moved inside the first one
+                            echo '<h4 class="u-text u-text-default u-text-9">' . $totalPrice . ' ₺</h4>';
+                            echo '<h6 class="u-text u-text-default u-text-10">(KDV Dahil)</h6>';
+                        } else {
+                            echo '<p>Sepet boş.</p>';
+                        }
+                        ?>
+                    </div>
+                    
                 </div>
             </div>
             <div
@@ -254,34 +279,43 @@
                     </div>
                 </div>
             </div>
-            <a href="https://nicepage.com/c/slider-website-templates"
-                class="u-btn u-btn-round u-button-style u-hover-palette-1-light-1 u-palette-1-base u-radius u-btn-4">Siparişi
-                Tamamla</a>
-            <p class="u-text u-text-default-lg u-text-default-md u-text-default-xl u-text-13">Bu siparişi tamamlayarak,
+
+            <form action="checkoutorder.php" method="POST">
+                <input type="hidden" name="cart" value="
+                                                                    <?php
+                                                                    $cart = json_decode($_POST['cart'], true);
+
+                                                                    if ($cart) {
+                                                                        // Sepet boş değilse içeriği yazdır
+                                                                        echo '<ul>';
+                                                                        $totalPrice = 0;
+                                                                        foreach ($cart as $item) {
+                                                                            echo '<li>' . $item['quantity'] . ' x ' . $item['name'] . ' - ' . ($item['quantity'] * $item['price']) . ' ₺</li>';
+                                                                            $totalPrice += $item['quantity'] * $item['price'];
+                                                                        }
+                                                                        echo '</ul>';
+
+                                                                    } else {
+                                                                        echo '<p>Sepet boş.</p>';
+
+
+                                                                    }
+
+                                                                    ?>">
+
+                <input
+                    class="u-btn u-btn-round u-button-style u-hover-palette-1-light-1 u-palette-1-base u-radius u-btn-4"
+                    type="submit" value="Siparişi Tamamla">
+            </form>
+            <p class="u-text u-text-default-lg u-text-default-md u-text-default-xl u-text-13">
+                Bu siparişi tamamlayarak,
                 Kullanım Koşulları'nı kabul etmektesiniz.&nbsp;<br>Bu siparişi vermenin Kullanım Koşulları uyarınca
                 ödeme yapmamı gerektirdiğini kabul etmekteyim.
             </p>
         </div>
     </section>
 
-
-
-    <footer class="u-align-center u-clearfix u-footer u-grey-80 u-footer" id="sec-1850">
-        <div class="u-clearfix u-sheet u-sheet-1">
-            <p class="u-small-text u-text u-text-variant u-text-1">Örnek metin. Metin Öğesini seçmek için tıklayın.</p>
-        </div>
-    </footer>
-    <section class="u-backlink u-clearfix u-grey-80">
-        <a class="u-link" href="https://nicepage.com/html-templates" target="_blank">
-            <span>HTML Website Templates</span>
-        </a>
-        <p class="u-text">
-            <span>created with</span>
-        </p>
-        <a class="u-link" href="" target="_blank">
-            <span>Offline Website Builder</span>
-        </a>.
-    </section>
+    <?php include("footer.php") ?>
 
 </body>
 

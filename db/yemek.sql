@@ -3,15 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Anamakine: 127.0.0.1
--- Üretim Zamanı: 24 Oca 2024, 23:34:50
--- Sunucu sürümü: 10.4.32-MariaDB
--- PHP Sürümü: 8.0.30
--- phpMyAdmin SQL Dump
--- version 5.2.1
--- https://www.phpmyadmin.net/
---
--- Anamakine: 127.0.0.1
--- Üretim Zamanı: 24 Oca 2024, 23:34:50
+-- Üretim Zamanı: 25 Oca 2024, 06:38:23
 -- Sunucu sürümü: 10.4.32-MariaDB
 -- PHP Sürümü: 8.0.30
 
@@ -52,7 +44,8 @@ INSERT INTO `dukkanlar` (`dukkan_id`, `dukkan_resmi_adi`, `dukkan_adi`, `dukkan_
 (15, 'dukkanlogo/1705094027.png', 'Adana Dükkanı', 'Adananın en güzel yeri', 'Adana', 30),
 (16, 'dukkanlogo/1705096381.png', 'AMASYA Dükkanı', 'fgdjfjyhfıkjyfjyfh', 'Amasya', 50),
 (18, 'dukkanlogo/1705167803.png', 'adwad', 'awdsefrg', 'Düzce', 123),
-(19, 'dukkanlogo/1705347314.png', 'adwad', 'sengfjrdngjkdr', 'Erzurum', 123);
+(19, 'dukkanlogo/1705347314.png', 'adwad', 'sengfjrdngjkdr', 'Erzurum', 123),
+(20, 'dukkanlogo/1706160924.jpg', 'adwad', 'sefsefsefsef', 'Adana', 123);
 
 -- --------------------------------------------------------
 
@@ -81,7 +74,7 @@ INSERT INTO `kullanicilar` (`KullaniciID`, `Adi`, `Soyadi`, `Eposta`, `Sifre`, `
 (3, 'aa', 'aa', 'aa@a.com', '$2y$10$hycq4oJ9kbrj1VtpXdC6KOgfW4xLVmk8HdlTes2C.a35AZ30Hrmqy', '2345678', '2024-01-26', ''),
 (4, 'apoooğ', 'wadawd', 'w@a.com', '$2y$10$xjV4jMcW7Pk1Orahn6LCE.3uJjrClaWrmsVGnBQiwu3oTT9MdnFQ.', '34567', '2024-01-24', ''),
 (5, 'EREN', 'AŞKIN', 'eren@gmail.com', '$2y$10$YDi95MtnKa3oYoOFPGgrxuCU3ZcxgUVNz7QlhZHpQLmbs6ozCSqqC', '12345678', '5678-04-23', ''),
-(6, 'ertu', 'ozer', 'aaa@a.com', '$2y$10$tK5bp/Moei3mhrpW/oxu6ex8CqhS1dnC/vqqzd5zYi9WRwkso/FVW', '5421823395', '2002-08-06', 'amasyaaaa');
+(6, '', '', 'aaa@a.com', '$2y$10$tK5bp/Moei3mhrpW/oxu6ex8CqhS1dnC/vqqzd5zYi9WRwkso/FVW', '', '', '');
 
 -- --------------------------------------------------------
 
@@ -211,7 +204,21 @@ INSERT INTO `siparisler` (`SiparisID`, `KullaniciID`, `Detay`, `Tarih`) VALUES
 (22, 6, '<ul><li>3 x wdaw - 96 ₺</li></ul><br> <p> Toplam Tutar: 96 ₺</p>', '24.01.2024 19:00:55'),
 (23, 6, '<ul><li>3 x Mandalina - 0 ₺</li><li>1 x dürüm - 12 ₺</li></ul><br> <p> Toplam Tutar: 12 ₺</p>', '24.01.2024 20:47:39'),
 (24, 6, '<ul><li>1 x Mandalina - 0 ₺</li></ul><br> <p> Toplam Tutar: 0 ₺</p>', '24.01.2024 20:54:25'),
-(25, 6, '<ul><li>1 x wdaw - 32 ₺</li><li>1 x aaa - 65 ₺</li></ul><br> <p> Toplam Tutar: 97 ₺</p>', '24.01.2024 20:58:54');
+(25, 6, '<ul><li>1 x wdaw - 32 ₺</li><li>1 x aaa - 65 ₺</li></ul><br> <p> Toplam Tutar: 97 ₺</p>', '24.01.2024 20:58:54'),
+(26, 6, '<br />\r\n<b>Warning</b>:  Undefined array key ', '25.01.2024 04:24:28'),
+(27, 6, '<br />\r\n<b>Warning</b>:  Undefined array key ', '25.01.2024 04:41:15'),
+(28, 6, '', '25.01.2024 04:52:26'),
+(29, 6, '', '25.01.2024 05:38:38'),
+(30, 6, '', '25.01.2024 05:39:14'),
+(31, 6, '', '25.01.2024 06:04:43'),
+(32, 6, '', '25.01.2024 06:04:53'),
+(33, 6, '', '25.01.2024 06:07:04'),
+(34, 6, '', '25.01.2024 06:17:15'),
+(35, 6, '', '25.01.2024 06:18:23'),
+(36, 6, '\r\n                                                                    <ul><li>10 x aaa - 650 ₺</li></ul>', '25.01.2024 06:21:28'),
+(37, 6, '\r\n                                                                    <ul><li>10 x aaa - 650 ₺</li></ul>', '25.01.2024 06:22:25'),
+(38, 6, '\r\n                                                                    <ul><li>5 x aaa - 325 ₺</li><br> <p> Toplam Tutar: 325 ₺</p></ul>', '25.01.2024 06:31:41'),
+(39, 6, '\r\n                                                                    <ul><li>4 x aaa - 260 ₺</li><br> <p> Toplam Tutar: 260 ₺</p></ul>', '25.01.2024 06:33:56');
 
 -- --------------------------------------------------------
 
@@ -232,7 +239,6 @@ CREATE TABLE `urunler` (
 --
 
 INSERT INTO `urunler` (`UrunID`, `UrunAdi`, `Fiyat`, `DukkanID`, `UrunResmi`) VALUES
-(15, 'Mandalina', 0.00, 15, 'urunresmi/1705096696.png'),
 (16, 'Abdullah', 0.00, 15, 'urunresmi/1705139845.png'),
 (17, 'wdaw', 32.00, 15, 'urunresmi/1705140733.jpg'),
 (18, 'aaa', 65.00, 15, 'urunresmi/1705140746.png'),
@@ -311,7 +317,7 @@ ALTER TABLE `yetkili`
 -- Tablo için AUTO_INCREMENT değeri `dukkanlar`
 --
 ALTER TABLE `dukkanlar`
-  MODIFY `dukkan_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `dukkan_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
 -- Tablo için AUTO_INCREMENT değeri `kullanicilar`
@@ -323,7 +329,7 @@ ALTER TABLE `kullanicilar`
 -- Tablo için AUTO_INCREMENT değeri `siparisler`
 --
 ALTER TABLE `siparisler`
-  MODIFY `SiparisID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+  MODIFY `SiparisID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
 
 --
 -- Tablo için AUTO_INCREMENT değeri `urunler`
